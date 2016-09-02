@@ -1,0 +1,931 @@
+/**
+ * 整体设计思路：
+ *      1、摒弃之前的最大宽度的760px的限制，所有宽度自适应
+ *      2、所有元素均采用border-box的形式
+ *      3、默认字体微软雅黑，默认字体大小 16px，
+ *          字体单位采用rem，rem字体大小只相对与html中定义的字体大小
+ *          1.0rem为常用字体，0.9rem/0.8rem为偏小号字体，1.2rem为标题字体
+ *      4、header/footer设置的z-index都是999，mpop的z-index是9999
+ *      5、弹出框为防止与其他插件冲突，采用calss="m-pop"的命名方式
+ *      6、经过测试，发现网上对于box-pack和box-align的理解不是很正确，纠正解析如下：
+ *          box-align/box-pack具体表示垂直居中或者水平居中取决于box-orient
+ *              默认情况下box-orient的值为horizontal，box-align表示父元素中子元素垂
+            直对齐方式，box-pack表示父容器中子容器水平对齐方式
+ *              当设置box-orient的属性为vertical时，box-align表示父元素中子元素            水平对齐方式，box-pack表示父容器中子容器垂直对齐方式
+ *      7、letter-sapcing使用时请注意padding-right减去对应的值以达到居中的效果：例如 btn-common中设置的letter-spacing:5px;就需要在padding-right中减去5px
+ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*:before,*:after{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+}
+ul,li{
+    list-style-type:none;
+}
+a{
+    text-decoration:none;
+}
+img{
+    border:none;
+    vertical-align: middle;
+}
+audio{
+	display: none;
+	width:0;
+	height:0;
+	visibility: hidden;
+}
+html{
+    width:100%;
+    height:100%;
+    font-size:16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body{
+    position: relative;
+    max-width:640px;
+    width:100%;
+    min-height: 100%;
+    margin:0 auto;
+    background-color: #ffffff;
+    font-family: "microsoft yahei", arial, 'Lato', Calibri, Arial, sans-serif;
+    -webkit-text-size-adjust: none;
+}
+.font-yahei{
+    font-family: "microsoft yahei", arial, 'Lato', Calibri, Arial, sans-serif;
+}
+button{
+    outline:none;
+    border:none;
+}
+/*输入框默认样式*/
+input{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color;
+    background-color: transparent;
+    outline: none;
+    border:none;
+}
+/*input type='checkbox'样式*/
+input[type='checkbox']{
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -o-appearance: checkbox;
+    -ms-appearance: checkbox;
+}
+/*input type='checkbox'样式*/
+input[type='radio']{
+    appearance: radio;
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    -o-appearance: radio;
+    -ms-appearance: radio;
+}
+/*box盒模型*/
+.box{
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-flexbox;
+}
+/*元素比例1*/
+.box-f1{
+    box-flex: 1 !important;
+    -webkit-box-flex: 1 !important;
+    -moz-box-flex: 1 !important;
+    -o-box-flex: 1 !important;
+    -ms-box-flex: 1 !important;
+    overflow: hidden !important;
+    width:10% !important;
+}
+/*元素比例2*/
+.box-f2{
+    box-flex: 2 !important;
+    -webkit-box-flex: 2 !important;
+    -moz-box-flex: 2 !important;
+    -o-box-flex: 2 !important;
+    -ms-box-flex: 2 !important;
+    overflow: hidden !important;
+    width:20% !important;
+}
+/*元素比例3*/
+.box-f3{
+    box-flex: 3 !important;
+    -webkit-box-flex: 3 !important;
+    -moz-box-flex: 3 !important;
+    -o-box-flex: 3 !important;
+    -ms-box-flex: 3 !important;
+    overflow: hidden !important;
+    width:30% !important;
+}
+/*元素比例4*/
+.box-f4{
+    box-flex: 4 !important;
+    -webkit-box-flex: 4 !important;
+    -moz-box-flex: 4 !important;
+    -o-box-flex: 4 !important;
+    -ms-box-flex: 4 !important;
+    overflow: hidden !important;
+    width:40% !important;
+}
+/*父容器中子元素垂直排列*/
+.box-v{
+    box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-box-orient: vertical;
+}
+/*父容器中子元素水平排列*/
+.box-h{
+    box-orient: horizontal;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -ms-box-orient: horizontal;
+}
+/*父容器中子元素正常排列*/
+.box-direct-normal{
+    box-direction: normal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -o-box-direction: normal;
+    -ms-box-direction: normal;
+}
+/*父容器中子元素倒叙排列*/
+.box-direct-reverse{
+    box-direction: reverse;
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -o-box-direction: reverse;
+    -ms-box-direction: reverse;
+}
+
+/*父容器中子元素垂直居上*/
+.box-v-t{
+    box-align: start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -o-box-align: start;
+    -ms-flex-align: start;
+}
+.box-v.box-v-t{
+    box-pack: start;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+}
+/*父容器中子元素垂直居下*/
+.box-v-b{
+	box-align: end;
+	-webkit-box-align: end;
+    -moz-box-align: end;
+    -o-flex-align: end;
+}
+.box-v.box-v-b{
+    box-pack: end;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -o-box-pack: end;
+    -ms-flex-pack: end;
+}
+/*父容器中子元素垂直居中*/
+.box-v-c{
+    box-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+}
+.box-v.box-v-c{
+    box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+}
+/*子元素拉伸到与父容器等高或者等宽,此值为box-align的默认值*/
+.box-v-stretch{
+    box-align: stretch;
+    -webkit-box-align: stretch;
+    -moz-box-align: stretch;
+    -o-box-align: stretch;
+    -ms-flex-align: stretch;
+}
+
+/*父容器中子元素水平居左*/
+.box-h-l{
+    box-pack: start;
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+}
+.box-v.box-h-l{
+    box-align: start;
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -o-box-align: start;
+    -ms-flex-align: start;
+}
+/*父容器中子元素水平居右*/
+.box-h-r{
+    box-pack: end;
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -o-box-pack: end;
+    -ms-flex-pack: end;
+}
+.box-v.box-h-r{
+    box-align: end;
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -o-box-align: end;
+    -ms-flex-align: end;
+}
+/*父容器中子元素水平居中*/
+.box-h-c{
+    box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+}
+.box-v.box-h-c{
+    box-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+}
+/*父容器中子元素在每个子元素之间分割多余的空间*/
+.box-h-justify{
+    box-pack: justify;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -o-box-pack: justify;
+    -ms-box-pack: justify;
+}
+
+/*垂直水平居中*/
+.box-center{
+    box-align: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    box-pack: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+}
+
+/*按钮样式 start*/
+.btn-common{
+    display: inline-block;
+    padding: 8px 20px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 5px;
+    letter-spacing: 5px;
+    padding-right:15px;
+    color: #fff;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    font-size:1.1rem;
+}
+
+/*按钮样式 end*/
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+/*浮动相关 start*/
+.f-l{
+    float:left;
+}
+.f-r{
+    float:right;
+}
+.clear{
+    clear:both;
+}
+.clearfix:after{
+    content:' ';
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear:both;
+}
+/*浮动相关 end*/
+/*position  start*/
+.fixed{
+    position: fixed;
+}
+.abs{
+    position: absolute;
+}
+.rel{
+    position: relative;
+}
+.pos-left{
+    left: 0;
+}
+.pos-right{
+    right: 0;
+}
+.pos-top{
+    top: 0;
+}
+.pos-bottom{
+    bottom: 0;
+}
+/*position end*/
+
+.d-b{
+    display: block;
+}
+.d-i-b{
+    display: inline-block;
+}
+.d-i{
+    display: inline;
+}
+
+.w-100{
+    width: 100%;
+}
+.h-100{
+    height: 100%;
+}
+.wh-100{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    z-index: 999;
+}
+footer{
+    z-index: 999;
+}
+.t-c{
+    text-align: center;
+}
+
+/*由于之前的命名会和某些插件冲突，所有改成m-pop*/
+.m-pop{
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    /*max-width: 640px;*/
+    left: 0;
+    position: fixed;
+    top:0;
+    z-index: 9999;
+}
+.m-pop-container{
+    width:90%;
+    background: #fff;
+    box-shadow: 0 0 6px 3px rgba(0,0,0,0.3);
+    border:1px solid #dcdcdc;
+    border-radius: 5px;
+    position: relative;
+}
+.m-pop-title{
+    height: 40px;
+    line-height: 39px;
+    border-bottom:1px solid #dcdcdc;
+    background:-webkit-linear-gradient(top,#fff,#f3f3f3);
+    padding-left:10px;
+    padding-right:50px;
+    color:#666;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size:1.1rem;
+}
+
+
+/*文字截取 start*/
+.hidden{
+    overflow: hidden;white-space: nowrap;
+}
+.hidden-e{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.hidden-b{
+    overflow: hidden;
+    word-break: break-all;
+}
+/*文字截取 end*/
+
+
+/*loading页面 start*/
+/*翻转loading效果 start*/
+.loading-rotate{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #67CF22;
+    -webkit-animation: rotateplane .8s infinite ease-in-out;
+            animation: rotateplane .8s infinite ease-in-out;
+}
+/*翻转loading效果 end*/
+/*线条伸缩效果 start*/
+.loading-stretch {
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    font-size: 10px;
+}
+.loading-stretch > div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    margin:0 2px;
+    -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+            animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.loading-stretch .rect2 {
+    -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+}
+
+.loading-stretch .rect3 {
+    -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+}
+
+.loading-stretch .rect4 {
+    -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+}
+
+.loading-stretch .rect5 {
+    -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+}
+
+/*loading页面 end*/
+
+
+/******从此处开始是有关swiper、arrow、play-button的样式*******/
+.swiper-body{
+    width:100%;
+    height:100%;
+    font-family: "microsoft yahei", arial, 'Lato', Calibri, Arial, sans-serif;
+    position:relative;
+    background: transparent;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+
+}
+.swiper-wrapper {
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+}
+.swiper-slide {
+    height: 100%;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    background: #fff;
+    text-align: center;
+}
+
+.swiper-device {
+    width: 100%;
+    height: 100%;
+	position:relative;
+}
+
+.swiper-arrow{
+    position: fixed;
+    bottom:10px;
+    left:50%;
+    margin-left: -30px;
+    width: 60px;
+    display: block;
+    z-index: 999999;
+    cursor: pointer;
+}
+
+.swiper-scale{
+    -webkit-animation: swiper-scale 2s linear infinite;
+            animation: swiper-scale 2s linear infinite;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+@-webkit-keyframes swiper-scale{
+    0%,100%{
+        transform:scale(1);
+        -webkit-transform:scale(1);
+    }
+
+    50%{
+        transform:scale(0.5);
+        -webkit-transform:scale(0.5);
+    }
+}
+@keyframes swiper-scale{
+    0%,100%{
+        transform:scale(1);
+        -webkit-transform:scale(1);
+    }
+
+    50%{
+        transform:scale(0.5);
+        -webkit-transform:scale(0.5);
+    }
+}
+.swiper-rel{
+    position: relative;
+}
+.swiper-v-m{
+    display: table-cell;
+    vertical-align: middle;
+    margin:auto;
+}
+.swiper-player-button {
+    position: fixed;
+    z-index: 10000;
+    display: block;
+    top: 10px;
+    right: 10px;
+    width: 37px;
+    height: 37px;
+    background: url(../images/player-button.png) -37px 0;
+    background-size: 74px 37px;
+    cursor: pointer;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+
+.swiper-player-button-close{
+    background-position: 0 0;
+}
+.swiper-bg{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100% !important;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    display: table;
+    vertical-align: middle;
+}
+/*******************swiper的样式结束************************/
+
+/*****************---animation 部分start---**********************/
+/***loading的animation部分start*****/
+
+@-webkit-keyframes stretchdelay {
+    0%, 40%, 100% { 
+        -webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);  
+    }  
+    20% {
+        -webkit-transform: scaleY(1.0); 
+				transform: scaleY(1.0); 
+    }
+}
+@keyframes stretchdelay {
+    0%, 40%, 100% {        
+        -webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);
+    }  
+    20% {        
+        -webkit-transform: scaleY(1.0);
+				transform: scaleY(1.0);
+    }
+}
+
+/***loading的animation部分end*****/
+@-webkit-keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(.97, .97, .97);
+            transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+.bounceIn {
+    -webkit-animation: bounceIn .75s;
+            animation: bounceIn .75s;
+    -webkit-animation-fill-mode:both;
+            animation-fill-mode:both;
+}
+
+@-webkit-keyframes bounceInLeft {
+    0%,100%,60%,75%,90% {
+        -webkit-transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+        transition-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-3000px,0,0);
+        transform: translate3d(-3000px,0,0)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(25px,0,0);
+        transform: translate3d(25px,0,0)
+    }
+
+    75% {
+        -webkit-transform: translate3d(-10px,0,0);
+        transform: translate3d(-10px,0,0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(5px,0,0);
+        transform: translate3d(5px,0,0)
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes bounceInLeft {
+    0%,100%,60%,75%,90% {
+        -webkit-transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+        transition-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-3000px,0,0);
+        -ms-transform: translate3d(-3000px,0,0);
+        transform: translate3d(-3000px,0,0)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(25px,0,0);
+        -ms-transform: translate3d(25px,0,0);
+        transform: translate3d(25px,0,0)
+    }
+
+    75% {
+        -webkit-transform: translate3d(-10px,0,0);
+        -ms-transform: translate3d(-10px,0,0);
+        transform: translate3d(-10px,0,0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(5px,0,0);
+        -ms-transform: translate3d(5px,0,0);
+        transform: translate3d(5px,0,0)
+    }
+
+    100% {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none
+    }
+}
+
+.bounceInLeft {
+    -webkit-animation: bounceInLeft 0.75s;
+    animation: bounceInLeft 0.75s;
+    -webkit-animation-fill-mode:both;
+            animation-fill-mode:both;
+}
+
+@-webkit-keyframes bounceInRight {
+    0%,100%,60%,75%,90% {
+        -webkit-transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+        transition-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(3000px,0,0);
+        transform: translate3d(3000px,0,0)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(-25px,0,0);
+        transform: translate3d(-25px,0,0)
+    }
+
+    75% {
+        -webkit-transform: translate3d(10px,0,0);
+        transform: translate3d(10px,0,0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(-5px,0,0);
+        transform: translate3d(-5px,0,0)
+    }
+
+    100% {
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes bounceInRight {
+    0%,100%,60%,75%,90% {
+        -webkit-transition-timing-function: cubic-bezier(0.215,.61,.355,1);
+        transition-timing-function: cubic-bezier(0.215,.61,.355,1)
+    }
+
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(3000px,0,0);
+        -ms-transform: translate3d(3000px,0,0);
+        transform: translate3d(3000px,0,0)
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(-25px,0,0);
+        -ms-transform: translate3d(-25px,0,0);
+        transform: translate3d(-25px,0,0)
+    }
+
+    75% {
+        -webkit-transform: translate3d(10px,0,0);
+        -ms-transform: translate3d(10px,0,0);
+        transform: translate3d(10px,0,0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(-5px,0,0);
+        -ms-transform: translate3d(-5px,0,0);
+        transform: translate3d(-5px,0,0)
+    }
+
+    100% {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none
+    }
+}
+
+.bounceInRight {
+    -webkit-animation: bounceInRight 0.75s;
+    animation: bounceInRight .75s;
+    -webkit-animation-fill-mode:both;
+            animation-fill-mode:both;
+}
+/****************---animation 部分end---*************************/
+
+/***********以下是延时*********************/
+.delay-1{
+    animation-delay:0.1s !important;
+    -webkit-animation-delay:0.1s !important; 
+}
+.delay-2{
+    animation-delay:0.2s !important;
+    -webkit-animation-delay:0.2s !important; 
+}
+.delay-3{
+    animation-delay:0.3s !important;
+    -webkit-animation-delay:0.3s !important; 
+}
+.delay-4{
+    animation-delay:0.4s !important;
+    -webkit-animation-delay:0.4s !important; 
+}
+.delay-5{
+    animation-delay:0.5s !important;
+    -webkit-animation-delay:0.5s !important; 
+}
+.delay-6{
+    animation-delay:0.6s !important;
+    -webkit-animation-delay:0.6s !important; 
+}
+.delay-7{
+    animation-delay:0.7s !important;
+    -webkit-animation-delay:0.7s !important; 
+}
+.delay-8{
+    animation-delay:0.8s !important;
+    -webkit-animation-delay:0.8s !important; 
+}
+.delay-9{
+    animation-delay:0.9s !important;
+    -webkit-animation-delay:0.9s !important; 
+}
+.delay-10{
+    animation-delay:1s !important;
+    -webkit-animation-delay:1s !important; 
+}
+/**************延时结束***************************/

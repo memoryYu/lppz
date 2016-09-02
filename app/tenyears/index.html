@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>良品铺子十岁啦~</title>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection"content="telephone=no, email=no" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="MobileOptimized" content="640">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="browsermode" content="application">
+		<meta name="x5-page-mode" content="app">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script>
+			scale();
+			function scale() {
+				try {
+					var viewport = document.querySelector("meta[name=viewport]");
+					if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+						var version = parseFloat(RegExp.$1);
+						if (version > 2.3) {
+							var phoneScale = parseInt(window.screen.width) / 640;
+							viewport.setAttribute('content', 'width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi,user-scalable=no');
+						} else {
+							viewport.setAttribute('content', 'width=640,target-densitydpi=device-dpi,user-scalable=no');
+						}
+					} else {
+						viewport.setAttribute('content', 'width=640,user-scalable=no, target-densitydpi=device-dpi');
+					}
+				} catch (e) {
+					//TODO handle the exception
+				}
+			}
+		</script>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?50247273a35616f65e201c60e46344aa";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		
+	</head>
+	<body id="wrapper" class="wh-100">
+		<audio id="Audio" src="http://lppzcdn.letwx.com/app/tenyears-build/resources/lppz.mp3" preload class="hide" style="width: 0;height: 0;"></audio>
+		<audio id="Audio1" src="http://lppzcdn.letwx.com/app/tenyears-build/resources/bg.mp3" preload loop="loop" class="hide" style="width: 0;height: 0;"></audio>
+		<audio id="Audio2" src="http://lppzcdn.letwx.com/app/tenyears-build/resources/btn.mp3" preload class="hide" style="width: 0;height: 0;"></audio>
+		<audio id="Audio3" src="http://lppzcdn.letwx.com/app/tenyears-build/resources/fly.mp3" preload loop="loop" class="hide" style="width: 0;height: 0;"></audio>
+		<audio id="Audio4" src="http://lppzcdn.letwx.com/app/tenyears-build/resources/type.mp3" preload loop="loop" class="hide" style="width: 0;height: 0;"></audio>
+		<div id="container">
+			<article id="main" class="wh-100">
+				<section id="loading" class="wh-100 box box-center">
+					<p>加载中…</p>
+				</section>
+				<section id="loadPage" class="wh-100 hide">
+					<img src="images/wenan.png" class="wenan pulse"/>
+					<div class="process">
+						<div class="bar-show">
+							<div class="orange"></div>
+							<img src="images/border.png" class="border"/>
+						</div>
+						<div class="bar-hide">
+							<img src="images/plane.png" alt="" class="plane"/>
+							<div class="percent"><span id="percent">0</span>%</div>
+						</div>
+					</div>
+				</section>
+				<!--indexPage start-->
+				<section id="indexPage" class="wh-100 hide">
+					<div id="first" class="me clearfix fadeInUp">
+						<img src="images/icon.png" class="mepic"/>
+						<div class="content">
+							<div id="over" class="content-img">
+								<div id="mycanvas">
+									<img src="images/hxm.png" class="w-100"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="second" class="me clearfix">
+						<img src="images/icon.png" class="mepic"/>
+						<div class="content">
+							<div class="content-img">
+								<img src="images/tuwen.png" class="w-100"/>
+							</div>
+							<img src="images/dianji.png" class="dianji go"/>
+						</div>
+					</div>
+					<img src="images/duihuakuang.png" class="dhk"/>
+				</section>
+				<!--indexPage end-->
+				<section id="loadPage1" class="wh-100 hide">
+					<img src="images/caiqi.png" class="caiqi2"/>
+					<img src="images/text2.png" class="text2"/>
+					<img id="feiji1" src="images/feiji2.png" class="feiji2"/>
+					<img src="images/GIF_1.gif" class="gif"/>
+				</section>
+				<section id="infoPage" class="w-100 hide">
+					<img src="images/caiqi.png" class="caiqi fadeInDown"/>
+					<img src="images/shiwu_9.png" class="shiwu_9 fadeInDown delay-2"/>
+					<img src="images/xiangji.png" alt="" class="xiangji fadeInLeft delay-2"/>
+					<img src="images/ditu.png" class="ditu bounceIn"/>
+					<img src="images/xian.png" class="xian bounceIn delay-2"/>
+					<img src="images/shiwu_6.png" class="shiwu_6 fadeInRight delay-6"/>
+					<img src="images/shiwu_7.png" class="shiwu_7 fadeInRight delay-8"/>
+					<img src="images/shiwu_8.png" class="shiwu_8 fadeInLeft delay-8"/>
+					<div class="card fadeInLeft">
+						<img src="images/card.png" class="w-100"/>
+						<div id="nickname" class="name">memory余</div>
+						<img id="headImg" src="images/icon.png" class="icon"/>
+					</div>
+					<img src="images/xiangzi.png" class="xiangzi fadeInRight delay-4"/>
+					<div class="xinfeng fadeInLeft delay-4">
+						<img src="images/xinfeng.png" class="w-100"/>
+						<img src="images/youchuo.png" class="youchuo tada"/>
+						<div id="name" class="person"></div>
+						<div id="tel" class="tel"></div>
+						<div id="address" class="address"></div>
+					</div>
+					<div id="getPrize" class="prizeBtn">
+						<img src="images/btn.png" class="w-100"/>
+						<img src="images/xingxing.png" class="xingxing"/>
+					</div>
+					<div id="plane" class="feiji fadeInRight delay-2">
+						<img id="planeImg" src="images/feiji3.png" class="w-100"/>
+					</div>
+				</section>
+				<section id="selectPage" class="wh-100 hide">
+					<img src="images/caiqi.png" class="caiqi2 bounceInDown"/>
+					<img src="images/text.png" class="text pulse"/>
+					<div class="selectBox bounceInRight">
+						<img src="images/zhi.png" class="w-100"/>
+						<img data-id='1' src="images/xingxiang_1.png" class="role xingxiang_1 bounce"/>
+						<img data-id='2' src="images/xingxiang_2.png" class="role xingxiang_2 shake"/>
+						<img data-id='3' src="images/xingxiang_3.png" class="role xingxiang_3 tada"/>
+						<img data-id='4' src="images/xingxiang_4.png" class="role xingxiang_4 wobble"/>
+						<img data-id='5' src="images/xingxiang_5.png" class="role xingxiang_5 tada"/>
+						<img data-id='6' src="images/xingxiang_6.png" class="role xingxiang_6 shake"/>
+						<img data-id='7' src="images/xingxiang_7.png" class="role xingxiang_7 shake"/>
+						<img data-id='8' src="images/xingxiang_8.png" class="role xingxiang_8 wobble"/>
+						<img data-id='9' src="images/xingxiang_9.png" class="role xingxiang_9 bounce"/>
+					</div>
+				</section>
+				<section id="loadPage2" class="wh-100 hide">
+					<img src="images/caiqi.png" class="caiqi2"/>
+					<img src="images/text2.png" class="text2"/>
+					<img id="plane2" src="images/feiji2.png" class="feiji2"/>
+					<div class="ditu2 rel">
+						<img src="images/ditu.png"/>
+						<img src="images/x.png" class="x"/>
+						<img src="images/shiwu_1.png" class="shiwu1"/>
+						<img src="images/shiwu_2.png" class="shiwu2"/>
+						<img src="images/shiwu_3.png" class="shiwu3"/>
+						<img src="images/shiwu_4.png" class="shiwu4"/>
+						<img src="images/shiwu_5.png" class="shiwu5"/>
+						<img src="images/shiwu_6.png" class="shiwu6"/>
+						<img src="images/shiwu_7.png" class="shiwu7"/>
+					</div>
+				</section>
+				<section id="endPage" class="wh-100 hide">
+					<div id="m-b" class="me clearfix fadeInUp" style="margin-bottom: 120px;">
+						<img src="images/icon.png" class="mepic"/>
+						<div class="content">
+							<div class="content-img">
+								<img id="banner" src="images/banner1.jpg" class="w-100"/>
+								<p style="margin-top: 12px;">晓明哥送你一份十周年好礼，赶紧收下它~</p>
+							</div>
+						</div>
+					</div>
+					<div id="getBtn" class="btn">
+						<img src="images/btn2.png" class="w-100"/>
+						<img src="images/xingxing.png" class="xingxing"/>
+					</div>
+					<div id="shareBtn" class="btn">
+						<img src="images/btn1.png" class="w-100"/>
+					</div>
+					<span class="intro">优惠券使用说明</span>
+					<img src="images/duihuakuang.png" class="dhk"/>
+				</section>
+				<section id="sharePage" class="wh-100 m-pop hide">
+					<img src="images/fenxiang.png" class="fenxiang"/>					
+				</section>
+				<section id="introPage" class="m-pop wh-100 hide">
+					<div class="box box-center box-v wh-100">
+						<div class="title">
+							<img src="images/shiyong.png" class="w-100"/>
+						</div>
+						<img src="images/text3.png" class="text3"/>
+						<div id="knowBtn" class="btn">
+							<img src="images/btn3.png" class="w-100"/>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+		
+		<script type="text/javascript" src="js/preventoverscroll.min.js"></script>
+		<script type="text/javascript">
+			var isAndroid;
+			var ua = navigator.userAgent.toLowerCase();	
+			if (/iphone|ipad|ipod/.test(ua)) {//alert("iphone");
+				isAndroid = false;  		
+			} else if (/android/.test(ua)) {//alert("android");	
+				isAndroid = true;      
+			}
+			console.log(isAndroid);
+			var outer = (isAndroid ? 'wrapper' : 'container');
+			var list = [outer];
+			var prevent = new PreventOverScroll({
+			    list: list
+			});
+		</script>
+		<script src="js/config.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://lppzcdn.letwx.com/app/libs/require.min.js" charset="utf-8"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

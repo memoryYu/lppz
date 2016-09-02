@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>火山大逃亡</title>
+		<base href="./" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script>
+			scale();
+			function scale() {
+				try {
+					var viewport = document.querySelector("meta[name=viewport]");
+					if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+						var version = parseFloat(RegExp.$1);
+						if (version > 2.3) {
+							var phoneScale = parseInt(window.screen.width) / 640;
+							viewport.setAttribute('content', 'width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi,user-scalable=no');
+						} else {
+							viewport.setAttribute('content', 'width=640,target-densitydpi=device-dpi,user-scalable=no');
+						}
+					} else {
+						viewport.setAttribute('content', 'width=640,user-scalable=no, target-densitydpi=device-dpi');
+					}
+				} catch (e) {
+					//TODO handle the exception
+				}
+			}
+		</script>
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<link rel="stylesheet" type="text/css" href="css/escape.css" />
+		<script src="js/config.js?v=201506050943" type="text/javascript"></script>
+		<script data-main="js/escape.js?v=201506050943" src="http://ngcdn.letwx.com/styles/jsng/require.min.js" type="text/javascript" charset="utf-8"></script>
+		</head>
+	<body>
+		<article id="main" class="wh-100 rel">
+			<!-- 游戏首页start-->
+			<section id="gameIndex" class="wh100 box box-v box-center">
+				<img src="images/bg4.jpg" class="topimg">
+				<img src="images/logo1.png" class="logo">
+				<div class="mid">
+					<img src="images/huoshan.png" class="midimg">
+					<p class="tishi">您今天还有<span class="num">3</span>次游戏机会</p>
+					<a class="startpack" id="gameStartBtn"><div class="start">开始游戏</div></a>
+				</div>
+				<img src="images/bg5.jpg" class="botimg">
+				<a class="startpackl" id="rankList"><div class="start">排行榜</div></a>
+				<a class="startpackr" id="gameExp"><div class="start">游戏说明</div></a>
+			</section>
+			<!--游戏首页 end-->
+			<!--游戏说明弹出框start-->
+			<section id="gameExpPop" class="m-pop hide">
+				<div class="box box-v box-center wh-100" >
+					<div class="cont">
+						<img src="images/gz.jpg" class="topimg">
+	        			<a id="closeExp" class="close"><img src="images/anniu-3.png" width="25px"></a>
+						<div class="text">
+							<p class="tishi2">游戏玩法</p>
+							<p class="tindet">火山2分钟就要爆发啦，你从火山口（起点）出发，看你需要几步安全逃离火山，到达安全区。十字路口随机埋有火山炸弹，踩上炸弹则Game over，重新开始游戏！若2分钟内未逃离火山，则火山爆发。最后根据每天安全逃离的最低步数或耗时进行成绩排行哦。</p>
+							<p class="tishi2">游戏奖励</p>
+							<p class="tindet">每人每天有三次玩游戏的机会，分享一次则增加一次玩的机会，每日24：00刷新成绩进行游戏排行，每日排行榜第一名送乐动火山冻一盒，前30名送5元乐动火山冻优惠劵。
+							</p>
+						</div>
+	        		</div>
+				</div>
+	        </section>
+			<!--游戏说明弹出框end-->
+			<!--正在游戏start-->
+			<section id="playing" class="wh100 box box-v box-center hide">
+				<div class="clearfix">
+					<div class="userpack">
+						<img src="images/pic.jpg" class="userimg">
+						<img src="images/shan.png" class="shan">
+					</div>
+					<div class="fenshupack">
+						<img src="images/time.png" class="clock_hlp">
+						<div class="barpack">
+							<div class="bar"></div>
+						</div>
+						<div class="time">
+							<span id="min">03</span>:
+							<span id="sec">00</span>
+						</div>
+					</div>
+				</div>
+				<div class="bushupack">步数<span class="count">0</span></div>
+				<div id="gameBox" class="rel">
+					
+				</div>
+				<textarea id="ulTMP" class="hide">
+					<ul class="gamelist clearfix">
+						<!--第一行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li class="chukou">
+							<div class="zhe hide"></div>
+						</li>
+						<!--第二行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第三行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第四行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第五行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第六行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第七行-->
+						<li id="sz">
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第八行-->
+						<li class="huoshan">
+							<div class="zhe hide"></div>
+						</li>
+						<li id="so">
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+					</ul>
+					<div id="here" class="hide upDown"></div>
+					<div class="pa hide"><img src="images/zhasile.png"></div>	
+				</textarea>
+				<div class="hstishi"><img src="images/zhiyin.png" ><span id="tip">点击空白格子，逃离火山口，注意地雷哟</span></div>
+			</section>
+			<!--正在游戏end-->
+			<!--失败弹出框start-->
+	   		<section id="popshibai" class="m-pop hide">
+	   			<img src="images/shibai.png" class="popimg">
+				<div class="btnpack">
+					<a class="startpack"><div class="another" id="playAgain1">再来一次</div></a>
+					<a class="startpack"><div class="another" id="share1">分享给小伙伴</div></a>
+					<a class="startpack"><div class="back" id="back">返回摇歌</div></a>
+				</div>
+	        </section>
+	   		<!--失败弹出框end-->
+	   		<!--胜利弹出框start-->
+	   		<section id="popshengli" class="m-pop hide">
+	   			<img src="images/shengli.png" class="popimg">
+				<div class="congra">
+					<p>您用<span class="congra2" id="sp">7</span>步成功逃离火山</p>
+					<p class="congra2">逃跑大师非你莫属</p>
+					
+				</div>
+				<div class="btnpack">
+					<a class="startpack"><div class="another" id="playAgain2">再来一次</div></a>
+					<a class="startpack"><div class="another" id="share2">炫耀一下</div></a>
+					<a class="startpack"><div class="back" id="checkRank">查看排行</div></a>
+				</div>
+	        </section>
+	   		<!--胜利弹出框end-->
+	   		<!--分享弹出框start-->
+	   		<section id="popshare" class="m-pop hide">
+	   			<img src="images/fenxiang2.png" class="sharepic">
+	   		</section>
+	   		<!--分享弹出框end-->
+		</article>
+	</body>
+</html>

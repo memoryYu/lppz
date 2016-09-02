@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>“枣”就应该脑洞大开</title>
+    <base href="./" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" type="text/css" href="css/base2.css" />
+    <link rel="stylesheet" type="text/css" href="css/myprize.css" />
+    <!-- <script src="http://lppz.letwx.com/app/libs/oauth.min.js"></script> -->
+    <script src="js/config.js" type="text/javascript"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?50247273a35616f65e201c60e46344aa";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+    <article class="wh-100 rel">
+        <div class="logo" style="width:0;height:0;"></div>
+        <section id="myprizePage" class="myprizePage wh-100 rel hide">
+            <div class="logo"></div>
+            <div class="myprizeImg"></div>
+            <div class="swiper-container" style="height:300px;width:100%;">
+                <div class="swiper-wrapper">
+                    <ul class="prizeList swiper-slide" id="prizeList">
+
+                    </ul>
+                </div>
+            </div>
+
+            <textarea class="hide" id="prizeListTMP">
+                <%
+                    if(data.ticket.length==0){
+                %>
+                    <div style="color:#fff;text-align: center;">你暂时没有奖品，快去玩游戏吧！</div>
+                <%}%>
+                <%
+                    for(var i=0;i< data.ticket.length;i++){
+                %>
+                <li>
+                    <div class="coupon rel">
+                        <%
+                            if(data.ticket[i].isuse==0){
+                        %>
+                        <div class="use">点击使用</div>
+                        <%}else{%>
+                        <div class="useno">已使用</div>
+                        <%}%>
+                    </div>
+                    <div class="code hide ">
+                        <div class="box box-center wh-100 box-v">
+                            <div class="codeInner" data-code="<%=data.ticket[i].code%>" data-isuse="<%=data.ticket[i].isuse%>">
+
+                            </div>
+                            <div style="font-size: 0.8rem;"><%=data.ticket[i].code%></div>
+                        </div>
+                    </div>
+                </li>
+                <%}%>
+            </textarea>
+            <div id="goIndexBtn" class="goIndexBtn"></div>
+        </section>
+
+        <!--关注弹出框start-->
+        <section id="guanzhu" class="m-pop hide">
+            <div class=" wh-100 box box-center">
+                <div id="popBox" class="t-c">
+                    <p>亲，还没关注我吧？</p>
+                    <p>关注之后即可使用优惠券~</p>
+                    <img src="images/erwei.jpg"/>
+                    <p>长按“识别二维码”&nbsp;<span>关注良品铺子</span></p>
+                </div>
+            </div>
+        </section>
+        <!--关注弹出框start-->
+
+    </article>
+    <script src="http://lppzcdn.letwx.com/app/libs/require.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/myprize.js"></script>
+</body>
+</html>

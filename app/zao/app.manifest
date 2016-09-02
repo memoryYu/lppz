@@ -1,0 +1,26 @@
+CACHE MANIFEST
+#VERSION 0.1
+#直接缓存的文件
+CACHE:
+#JS
+http://lppz.letwx.com/app/libs/oauth.min.js
+http://lppzcdn.letwx.com/app/libs/require.min.js
+
+#css
+css/base2.css
+
+#image
+images/shouyebeijing.jpg
+images/tongyongbeijing.jpg
+images/indexPage.png
+images/myprize.png
+images/person.png
+images/resultPage.png
+images/erwei.jpg
+images/fenxiang.png
+
+NETWORK:
+css/index.css
+js/config.js
+js/index.js
+*

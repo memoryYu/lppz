@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>良品铺子 | 欧洲杯火热大竞猜</title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=201606181820" />
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?50247273a35616f65e201c60e46344aa";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		
+	</head>
+	<body class="h-100">
+		<article id="main" class="wh-100 hide">
+			<!--memberPage start-->
+			<section id="memberPage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<img src="images/qiu.png" class="qiu"/>
+						<img src="images/close.png" class="close" id="memberClose"/>
+						<p class="gz">很抱歉，您没有绑定会员卡，无法调取积分进行投注，请在良品铺子公众号完成会员卡绑定。</p>
+						<a href="#" class="ljzc">
+							<img src="images/btn_21.png" class="w-100"/>
+						</a>	
+					</div>
+				</div>
+			</section>
+			<!--memberPage end-->
+			<!--hyPage start-->
+			<section id="hyPage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<img src="images/qiu.png" class="qiu"/>
+						<p class="gz">关注良品铺子官方公众号，<br />即可开始猜球哟~</p>
+						<img src="images/qrcode.jpg" class="qrcode"/>
+						<p>长摁二维码识别，关注我们</p>
+					</div>
+				</div>
+			</section>
+			<!--hyPage end-->
+			<!--indexPage start-->
+			<section id="indexPage" class="w-100 hide"></section>
+			<textarea id="indexTMP" class="hide">
+				<div class="operatetip hide">
+					<img src="images/tishi.png" class="ts"/>
+					<div class="wzdl" id="wzdl">我知道了</div>
+				</div>
+				<img src="images/zhuti.jpg" class="w-100"/>
+				<img src="images/gz.png" class="rules" id="rule"/>
+				<div class="container">
+					<img src="images/jingcai.png" class="w-100"/>
+					<%
+						var current = data.current; 
+						for(var i=0;i<current.length;i++){
+					%>
+					<div class="vs clearfix">
+						<div class="left box box-v box-center">
+							<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=current[i].team1icon%>.png" class="country"/>
+							<div data-type="1" data-sid="<%=current[i].sid%>" data-rate="<%=current[i].srate%>" class="tz bet"><%=current[i].team1name%> 胜</div>
+							<p class="support"><%=current[i].team1rate%>支持</p>
+						</div>
+						<div class="center box box-v box-center">
+							<p class="time"><%=current[i].starttime%></p>
+							<img src="images/VS.png" class="box"/>
+							<p class="support"><%=current[i].otherrate%>支持</p>
+						</div>
+						<div class="pj box box-v box-center hide">
+							<p class="time"><%=current[i].starttime%></p>
+							<img src="images/VS.png" class="box"/>
+							<div data-type="3" data-sid="<%=current[i].sid%>" data-rate="<%=current[i].prate%>" class="pingju bet">平局</div>
+							<p class="support"><%=current[i].otherrate%>支持</p>
+						</div>
+						<div class="right box box-v box-center">
+							<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=current[i].team2icon%>.png" class="country"/>
+							<div data-type="2" data-sid="<%=current[i].sid%>" data-rate="<%=current[i].frate%>" class="tz bet"><%=current[i].team2name%> 胜</div>
+							<p class="support"><%=current[i].team2rate%>支持</p>
+						</div>
+						<div class="yt box box-center <%=(!current[i].hasbet)?'hide':''%>">
+							已投<%=current[i].mypoints%>积分支持<span class="yellow"><%=current[i].mybet%></span><br />
+							等待比赛结果
+						</div>
+						<div class="yt box box-center <%=(!current[i].canbet)?'':'hide'%>">
+							比赛开始一小时前停止投注， <br />下次早点来哦~
+						</div>
+					</div>
+					<%
+						}
+					%>
+					<!--<div class="vs clearfix">
+						<div class="left box box-v box-center">
+							<img src="images/country/1.png" class="country"/>
+							<div class="tz">罗马尼亚 胜</div>
+							<p class="support">42%支持</p>
+						</div>
+						<div class="center box box-v box-center">
+							<p class="time">03:00</p>
+							<img src="images/VS.png" class="box"/>
+							<p class="support">42%支持</p>
+						</div>
+						<div class="right box box-v box-center">
+							<img src="images/country/1.png" class="country"/>
+							<div class="tz">罗马尼亚 胜</div>
+							<p class="support">42%支持</p>
+						</div>
+					</div>-->
+					<div class="rel w-100 clearfix">
+						<img src="images/btn_1.png" class="wdjp" id="wdjp"/>
+						<img src="images/btn_2.png" class="wdzj" id="wdzj"/>
+					</div>
+				</div>
+				<img src="images/bg_2.png" class="gap"/>
+				<div class="container">
+					<img src="images/shangyichang.png" class="w-100"/>
+					<%
+						var last = data.last;
+						for(var i=0;i<last.length;i++){
+					%>
+					<div class="vs">
+						<div class="top">
+							<div class="wdjf box box-v box-center">
+								<p>获得积分</p>
+								<p class="score">+<%=(!last[i].winpoints)?'0':last[i].winpoints%></p>
+							</div>
+							<div class="list clearfix">
+								<div class="country-img">
+									<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=last[i].team1icon%>.png"/>
+								</div>
+								<div class="country-name"><%=last[i].team1name%></div>
+								<div class="country-score"><%=last[i].team1goals%></div>
+							</div>
+							<div class="list clearfix">
+								<div class="country-img">
+									<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=last[i].team2icon%>.png"/>
+								</div>
+								<div class="country-name"><%=last[i].team2name%></div>
+								<div class="country-score"><%=last[i].team2goals%></div>
+							</div>
+						</div>
+						<p class="result">
+							<span class="yellow"><%=last[i].allusernum%></span>人竞猜，
+						<%
+							if(!last[i].hasbet){
+						%>	
+							我没有参与此次投注
+						<%
+							}else{
+						%>
+							我投了<span class="yellow"><%=last[i].mypoints%></span>积分猜<span class="yellow"><%=last[i].mybet%></span>
+						<%
+							}	
+						%>	
+						</p>
+					</div>
+					<%
+						}
+					%>
+					<!--<div class="vs">
+						<div class="top">
+							<div class="wdjf box box-v box-center">
+								<p>我的积分</p>
+								<p class="score">+20</p>
+							</div>
+							<div class="list clearfix">
+								<div class="country-img">
+									<img src="images/country/1.png"/>
+								</div>
+								<div class="country-name">英国</div>
+								<div class="country-score">2</div>
+							</div>
+							<div class="list clearfix">
+								<div class="country-img">
+									<img src="images/country/1.png"/>
+								</div>
+								<div class="country-name">英国</div>
+								<div class="country-score">2</div>
+							</div>
+						</div>
+						<p class="result">
+							<span class="yellow">5644</span>人竞猜，我猜的是<span class="yellow">平局</span>
+						</p>
+					</div>-->
+					<div class="rel w-100 clearfix">
+						<img src="images/btn_3.png" class="wdjp" id="jcph"/>
+						<img src="images/btn_4.png" class="wdzj" id="qzjf"/>
+					</div>
+					<a id="cksc" class="schedule">查看完整赛程</a>
+				</div>
+				<a class="buy" href="https://wap.koudaitong.com/v2/feature/161nl3lko">
+					<img src="images/banner.jpg" class="w-100" />
+				</a>	
+			</textarea>
+			<!--indexPage end-->
+			<!--rulePage start-->
+			<section id="rulePage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<img src="images/close.png" class="close" id="ruleClose"/>
+						<img src="images/guize.png" class="w-100"/>
+						<ul>
+							<li>活动时间:2016.6.20-7.11</li>
+							<li><br /></li>
+							<li>
+								一.怎么玩?<br />
+								1.选择自己支持的球队，投注积分，即可参与猜球。每场比赛每人只能猜球一次。猜对赚积分，猜错扣积分。<br />
+								2.如果积分不足，可向好友要积分，好友确认以后可获得20积分，每人每天只能要一次噢。
+							</li>
+							<li><br /></li>
+							<li>
+								二.有啥奖?<br />
+								1.比赛结束以后，猜对球的用户会根据所投注积分多少按比例分得猜错球的一方所押注的全部积分。<br />
+								2.每次猜完球都能获得一次摇一摇抽奖的机会，奖品包括：良品铺子代金券，U盘，电子秤，价值46元的看球零食桶，免费出国游名额。 <br />
+								3.活动期间累积猜对8场比赛结果，即可参与平分10万现金。
+							</li>
+							<li><br /></li>
+							<li>
+								三.请放心!<br />
+								1.抽中实物奖品，需填写收货地址、联系人信息及中奖者身份证，不填视为放弃噢，良妹将在您中奖后7个工作日内将奖品快递到家。<br />
+								2.累积猜对8场比赛，良妹会在活动结束后7个工作日内将您平分到的现金发送到您的微信钱包。<br />
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!--rulePage end-->
+			<!--xzPage start-->
+			<section id="xzPage" class="wh-100 m-pop hide"></section>	
+			<textarea id="xzTMP" class="hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<div class="xz-info clearfix">
+							<div class="choose">
+								我选择<span class="yellow"><%=data.country%></span>
+							</div>
+							<div class="wdjf">我的积分：<%=data.mypoints%></div>
+						</div>
+						<ul class="clearfix">
+							<li class="active">
+								<div data-points="20"  class="xz">
+									20积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="40" class="xz">
+									40积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="80" class="xz">
+									80积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="100" class="xz">
+									100积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="200"  class="xz">
+									200积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="400" class="xz">
+									400积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="600" class="xz">
+									600积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+							<li>
+								<div data-points="800" class="xz">
+									800积分
+									<img src="images/yes.png"/>
+								</div>
+							</li>
+						</ul>
+						<p class="tip"><!--如果猜对将获得<span id="getPoints"></span>积分--></p>
+						<div class="btns clearfix">
+							<div class="qx">
+								<img src="images/btn_17.png" id="cancel"/>
+							</div>
+							<div class="qrxz">
+								<img src="images/btn_19.png" id="qrxz"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</textarea>		
+			<!--xzPage end-->
+			<!--xzsbPage start-->
+			<section id="xzsbPage" class="wh-100 m-pop hide"></section>
+			<textarea id="xzsbTMP" class="hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<div class="xz-info clearfix">
+							<div class="choose">
+								我选择<span class="yellow"><%=data.country%></span>
+							</div>
+							<div class="wdjf">我的积分：<span class="red"><%=data.mypoints%></span></div>
+						</div>
+						<p class="failresult">您的积分不足<span id="xzPoints" class="yellow">20</span>，无法进行下注哦~<br />快去向好友求赠积分吧~</p>
+						<img src="images/btn_20.png" class="qd" id="sure"/>
+					</div>
+				</div>
+			</textarea>	
+			<!--xzsbPage end-->
+			<!--tzcgPage start-->
+			<section id="tzcgPage" class="w-100 hide">
+				<audio id="audio" src="http://lppzcdn.letwx.com/app/eurocup-build/resource/shake.mp3" preload style="display: none;width:0;height:0;"></audio>
+				<img src="images/flag.png" class="w-100"/>
+				<img src="images/text_2.png" class="tzcg tzcgPage"/>
+				<img src="images/text_1.png" class="tzcg zscgPage"/>
+				<p class="tzresult tzcgPage">已投注<span id="tzjf">20</span>积分猜<span id="tzgj">德国</span>胜<br />请留意赛后公众号的积分通知</p>
+				<p class="cj tzcgPage">同时恭喜你获得1次抽奖机会！</p>
+				<p class="cgzs zscgPage">成功赠送20积分<br />同时恭喜你获得1次抽奖机会！</p>
+				<div class="yyy">
+					<img src="images/yao.png" class="yao"/>
+					<img src="images/hand.png" class="shou"/>
+				</div>
+				<img src="images/prizes.png" class="w-100"/>
+				<p class="cj yellow">出国游、优惠券<br />各种丰厚奖品等你来拿！</p>
+			</section>
+			<!--tzcgPage end-->
+			<!--gxnPage start-->
+			<section id="gxnPage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain rel">
+						<img src="images/tanchu_1.png" class="w-100"/>
+						<div class="abs pos-left pos-top wh-100 p-lr-15">
+							<p class="jp" id="jpname">获得良品铺子优惠券一张</p>
+							<img src="images/btn_7.png" class="ckjp" id="ckjp"/>
+						</div>
+					</div>					
+				</div>
+			</section>	
+			<!--gxnPage end-->
+			<!--hyhPage start-->
+			<section id="hyhPage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain rel">
+						<img src="images/tanchu_2.png" class="w-100"/>
+						<div class="abs pos-left pos-top wh-100 p-lr-15">
+							<p class="jp">缘分不够，和大奖擦肩而过~</p>
+							<img src="images/btn_8.png" class="ckjp" id="fhsy"/>
+						</div>
+					</div>					
+				</div>
+			</section>	
+			<!--hyhPage end-->
+			<!--rankPage start-->
+			<section id="rankPage" class="w-100 hide"></section>	
+			<textarea id="rankTMP" class="hide">
+				<img src="images/paihang.png" class="phb"/>
+				<div class="rank clearfix">
+					<div data-type="week" class="week paihang">周排行</div>
+					<div data-type="all" class="all paihang">总排行</div>
+				</div>
+				<div class="my clearfix">
+					<div class="ranking hidden-e"><%=(data.myrank.rank>1000)?'1000+':data.myrank.rank%></div>
+					<div class="name hidden-e"><%=data.myrank.nickname%></div>
+					<div class="score hidden-e"><%=data.myrank.points%></div>
+				</div>
+				<ul class="rankList">
+				<%
+					var list = data.list;
+					for(var i=0;i<list.length;i++){
+				%>	
+					<li class="clearfix">
+						<div class="ranking"><%=list[i].rank%>.</div>
+						<div class="name hidden-e"><%=list[i].nickname%></div>
+						<div class="score"><%=list[i].points%></div>
+					</li>
+				<%
+					}
+				%>	
+					<!--<li class="clearfix">
+						<div class="ranking">1.</div>
+						<div class="name hidden-e">权志龙G-Dragon</div>
+						<div class="score">+50000</div>
+					</li>-->
+				</ul>
+				<div class="fhsy" id="backHome">返回首页</div>
+			</textarea>
+			<!--rankPage end-->
+			<!--wdzjPage start-->
+			<section id="wdzjPage" class="w-100 hide"></section>	
+			<textarea id="wdzjTMP" class="hide">
+				<img src="images/zhanji.png" class="w-100"/>
+				<div class="myzj box box-v-c box-h-l hidden-e">
+					猜对了<span class="yellow"><%=data.wintimes%></span>场球&nbsp;&nbsp;赢得积分：<%=data.winpoints%>
+					<img src="images/btn_12.png" class="qzjf" id="qiuz"/>
+				</div>
+				<%
+					var list = data.list;
+					for(var i=0;i<list.length;i++){
+				%>
+				<div class="vs">
+					<div class="top">
+						<div class="wdjf box box-v box-center">
+							<p>获得积分</p>
+							<p class="score"><%=list[i].winpoints%></p>
+						</div>
+						<div class="list clearfix">
+							<div class="country-img">
+								<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=list[i].team1icon%>.png"/>
+							</div>
+							<div class="country-name"><%=list[i].team1name%></div>
+							<div class="country-score"><%=list[i].team1goals%></div>
+						</div>
+						<div class="list clearfix">
+							<div class="country-img">
+								<img src="http://lppzcdn.letwx.com/app/eurocup-build/images/country/<%=list[i].team2icon%>.png"/>
+							</div>
+							<div class="country-name"><%=list[i].team2name%></div>
+							<div class="country-score"><%=list[i].team2goals%></div>
+						</div>
+					</div>
+					<p class="result">
+						<span class="yellow"><%=list[i].allusernum%></span>人竞猜，我投了<span class="yellow"><%=list[i].mypoints%></span>积分猜<span class="yellow"><%=list[i].mybet%></span>
+					</p>
+				</div>
+				<%
+					}
+				%>
+				<!--<div class="vs">
+					<div class="top">
+						<div class="wdjf box box-v box-center">
+							<p>我的积分</p>
+							<p class="score">+20</p>
+						</div>
+						<div class="list clearfix">
+							<div class="country-img">
+								<img src="images/country/1.png"/>
+							</div>
+							<div class="country-name">英国</div>
+							<div class="country-score">2</div>
+						</div>
+						<div class="list clearfix">
+							<div class="country-img">
+								<img src="images/country/1.png"/>
+							</div>
+							<div class="country-name">英国</div>
+							<div class="country-score">2</div>
+						</div>
+					</div>
+					<p class="result">
+						<span class="yellow">5644</span>人竞猜，我猜的是<span class="yellow">平局</span>
+					</p>
+				</div>-->
+				<div class="btns rel w-100 clearfix">
+					<img src="images/btn_11.png" class="wdjp" id="backIndex"/>
+					<img src="images/btn_10.png" class="wdzj" id="jfdh"/>
+				</div>
+			</textarea>
+			<!--wdzjPage end-->
+			<!--sharePage start-->
+			<section id="sharePage" class="wh-100 m-pop hide">
+				<img src="images/fenxiang_2.png" class="fx2"/>
+			</section>	
+			<!--sharePage end-->
+			<!--zsPage start-->
+			<section id="zsPage" class="w-100 hide"></section>
+			<textarea id="zsTMP" class="hide">
+				<img src="images/logo.png" class="logos"/>
+				<img src="images/zhuti_1.png" class="w-100"/>
+				<div class="zs-box">
+					<img src="<%=data.headimgurl%>" class="friend"/>
+					<p><%=data.nickname%>向你求赠积分<br />快来帮助你的小伙伴一起赢大奖吧~<br /><span class="yellow">赠送成功即可获得一次抽奖机会哟！</span></p>
+				</div>
+				<img src="images/btn_9.png" class="zscj" id="zscj"/>
+			</textarea>	
+			<!--zsPage end-->
+			<!--scPage start-->
+			<section id="scPage" class="w-100 hide">
+				<img src="images/saicheng.png" class="w-100 m-b-10 d-b"/>
+				<img src="images/saicheng1.png" class="w-100"/>
+				<img src="images/saicheng2.png" class="w-100"/>
+				<div class="bottom box box-center">
+					<img src="images/btn_11.png" class="fhsy" id="scfh"/>
+				</div>
+			</section>
+			<!--scPage end-->
+			<!--errorPage start-->
+			<section id="errorPage" class="wh-100 hide">
+				<img src="images/error.jpg" class="w-100"/>
+				<p>活动太火爆，请您稍后再试~</p>
+			</section>
+			<!--errorPage end-->
+		</article>
+		<script src="js/config.js?v=201606181820" type="text/javascript"></script>
+		<script type="text/javascript" src="http://lppzcdn.letwx.com/app/libs/require.min.js" charset="utf-8"></script>
+		<script src="js/index.js?v=201606181820"></script>
+	</body>
+</html>

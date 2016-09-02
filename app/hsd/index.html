@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>果冻时间，乐动一下！</title>
+		<base href="./" />
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=201507161642" />
+		<link rel="stylesheet" type="text/css" href="css/escape.css?v=201507161642" />
+		<script src="http://lppzcdn.letwx.com/app/libs/metaFix.js"></script>
+		<script src="js/config.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<article id="main" class="wh-100 rel">
+			<!--首页 start-->
+			<section id="indexPage" class="wh-100 hide box box-v box-center">
+				<img src="images/logo.png" class="logo" />
+				<img src="images/zhuti.png" class="zhuti" />
+				<div class="txtbg">
+					<p class="t-c index_p p-t-5">嗨，果冻时间到，</p>
+					<p class="t-c index_p p-b-5">动人的音乐和好玩的游戏等着你！</p>
+					<div id="indexStartBtn" class="btn_red">开&nbsp;&nbsp;&nbsp;&nbsp; 始</div>
+				</div>
+			</section>
+			<!--首页 end-->
+			<!--摇色子 start-->
+			<section id="szPage" class="wh-100 hide">
+				<audio id="audio" src="resource/0387.mp3" preload style="display: none;width:0;height:0;"></audio>
+				<div class="none"></div>
+				<p class="t-c wz pulse">吃火山冻听音乐，<br />选择想了解的音乐国度</p>
+				<div class="device">
+				</div>
+				<textarea id="deviceTMP" class="hide">
+					<div class="swiper-container swiper-country ">
+						<div class="contryList swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="countryitem box box-v box-center">
+									<div>日&nbsp;&nbsp;本</div>
+									<div>JAPAN</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="countryitem box box-v box-center">
+									<div>美&nbsp;&nbsp;国</div>
+									<div>USA</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="countryitem box box-v box-center">
+									<div>中&nbsp;&nbsp;国</div>
+									<div>CHINA</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="countryitem box box-v box-center">
+									<div>希&nbsp;&nbsp;腊</div>
+									<div>GREECE</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="countryitem box box-v box-center">
+									<div>阿根廷</div>
+									<div class="agt">ARGENTINA</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--Add arrow-->
+					<a class="arrow-left"></a>
+					<a class="arrow-right"></a>
+				</textarea>
+				<div id="triangle" class="triangle"></div>
+				<div class="guang rel">
+					<img src="images/guang.png" class="guang_img" />
+					<div class="shaizi">
+						<div id="dice" class="dice dice_2"></div>
+					</div>
+					<div id="yao" class="btn_red cg">摇骰子抽歌</div>
+					<div id="tw" class="btn_red tw">火山大逃亡</div>
+				</div>
+			</section>
+			<!--摇色子 end-->
+			<!--播放音乐 start-->
+			<section id="musicPage" class="wh-100 hide" >
+				<div class="box box-v box-center wh-100">
+					<img src="images/anniuzuo1.png" alt="返回" id="anz1"/>
+					<img src="images/fenxiang.png" class="fx pulse">
+					<div class="info">
+						<p id="musicName" class="font-w">ROSAS</p>
+						<p id="musicSonger">XIBANYA GEQU,DUI AI DE KE</p>
+					</div>
+					<div class="pan">
+						<img id="musicpic" src="images/pic.jpg" class="backimg">
+						<img src="images/bofanganniu.png" class="on">
+						<img src="images/die2.png" class="diwen">
+						<img src="images/die1.png" class="huatong">
+						<div id="playMusic" class="bfbtn active"></div>
+					</div>
+					<p class="intro">有<span id="percent"></span>人和你摇出的歌曲一样</p>
+					<div id="changeMusic" class="another">换一首</div>
+					<div id="goGame" class="taowang">火山大逃亡</div>
+					<div id="musicLoad" class="music_load">
+						<div class="box box-v box-center wh-100">
+							<img src="images/load.gif" class="load_gif" />
+							<div class="t-c m-t-15">正在加载音频文件</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--播放音乐 end-->
+			<!--排行榜 start-->
+			<section id="rankPage" class="wh-100 hide">
+				<div class="toppack p-t-15">
+					<img src="images/huangguan.png" class="topg1">
+					<img src="images/wenzi.png" class="topg1">
+					<p id="muqdi" class="p_info">目前您是第<span id="myrank"></span>名</p>
+				</div>
+				<div id="rankpack" class="rankpack">
+
+				</div>
+				<div class="bot clearfix">
+					<div id="rankGoIndex" class="startpack  f-l"><div class="another">返回首页</div></div>
+					<div class="startpack  f-r"><a id="myaward" style="color: #fff !important;" class="another d-b" href="http://mp.weixin.qq.com/s?__biz=MzA3MTg0NDkyNQ==&mid=210706335&idx=1&sn=2b1f6b328806291fbbd209547b79916f&scene=23&srcid=0915SVYpoLWr0D68hL44pmfo#rd">领取红包</a></div>
+				</div>
+
+				<textarea id="rankListTMP" class="hide">
+					<%
+						if(data.length == 0){
+					%>
+						<div class="swiper-container swiper-containerph w-100">
+							<div class="swiper-wrapper  w-100">
+								<div class="swiper-slide w-100">
+									<p style="font-size:1.8rem;color:#000;text-align: center;">排行榜暂时没有人哦！</p>
+								</div>
+							</div>
+						</div>
+					<%
+						}else{
+					%>
+					<img src="images/anniushang.png" class="up">
+					<img src="images/anniuxia.png" class="down">
+
+					<div class="swiper-container swiper-containerph w-100">
+						<div class="swiper-wrapper  w-100">
+							<div class="swiper-slide w-100">
+								<ul id="rankList" class="rankList">
+									<%
+										for(var i=0;i<data.length;i++){
+									%>
+									<li>
+										<span class="num"><%=(i+1)%></span>
+										<div class="userimg">
+											<%
+												if(i==0){
+											%>
+											<img src="images/huangguan.png"  class="guan">
+											<%
+												}
+											%>
+											<div class="border">
+												<img src="<%=data[i].headimgurl ? data[i].headimgurl:'images/pic.jpg'%>" >
+											</div>
+										</div>
+										<div class="info">
+											<P class="username"><%=data[i].nickname ? data[i].nickname : '无名英雄' %></P>
+											<p>
+												步数：<span class="fontlarge"><%=data[i].step%></span>步
+												<span class="time">时间：<span class="fontlarge"><%=data[i].usetime%></span>秒</span>
+											</p>
+										</div>
+									</li>
+									<%
+										}
+									%>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<%
+						}
+					%>
+				</textarea>
+			</section>
+			<!--排行榜 end-->
+			<!--我的奖品 start-->
+			<section id="myprizePage" class="wh-100 hide">
+				<div style="height: 100px;"></div>
+				<div class="myaward">
+					<img src="images/jp.png" class="myawardtit">
+					<ul id="myPrizeList" class="quanlist">
+						
+					</ul>
+					<textarea id="myPrizeListTMP" class="hide">
+						<%
+							if(data.length == 0){
+						%>
+							<div class="t-c c-000" style="font-size:1.8rem;">暂时没有奖品哦！</div>
+						<%
+							}else{
+								for(var i=0;i<data.length;i++){
+						%>
+							<li class="ylq">
+								<div class="border">
+									<img src="images/pic.jpg" class="quanimgl">
+								</div>
+								<%
+									var type = '乐动火山冻一盒';
+									if(data[i].type == 0){
+										type = '五元优惠券1张';
+									}
+								%>
+								<p class="fontb hidden-e"><%=type%></p>
+								<p class="hidden-e"><%=data[i].wintime%><span class="m-15">排名：第<%=data[i].rank%>名</span></p>
+								<%
+									var cl = 'quanr';
+									if(data[i].ischeck == 0){
+										cl = 'quanr lq';
+									}
+								%>
+								<div class="<%=cl%>" data-id="<%=data[i].id%>">领 &nbsp;取</div>
+							</li>	
+						<%
+								}
+							}
+						%>
+					</textarea>
+				</div>
+				<div id="myprizeGoIndex" class="another" style="margin-top: 30px;">返回首页</div>
+				<section id="myprzePop" class="m-pop hide">
+					<div class="box  box-v box-center wh-100" >
+						<div class="cont">
+							<img src="images/anniu5.png" id="myprzePopClose" class="close">
+							<img src="images/guodong.png" class="contimg">
+							<div class="conttishi">
+								<p>请完善以下信息</p>
+								<p>我们会尽快与你联系哦</p>
+							</div>
+							<input id="myprizeName" type="text" class="input" placeholder="请输入您的姓名">
+							<input id="myprizeTel" type="tel" class="input" placeholder="请输入您的电话">
+							<div id="myprizeConfirm" class="startpack"><div class="another">确定提交</div></div>
+						</div>
+					</div>
+				</section>
+			</section>
+			<!--我的奖品 end-->
+			
+			<!-- 游戏首页start-->
+			<section id="gameIndex" class="wh100 hide">
+				<div class="wh-100 box box-v box-center">
+					<img src="images/logo1.png" class="logo">
+					<img src="images/anniufanhui.png" id="anfh">
+					<div class="mid">
+						<img src="images/huoshan.png" class="midimg">
+						<p class="tishi">您今天还有<span class="num">3</span>次游戏机会</p>
+						<a class="startpack start" id="gameStartBtn">开始游戏</a>
+						<a style="color: #fff !important;" class="startpack start" href="http://mp.weixin.qq.com/s?__biz=MzA3MTg0NDkyNQ==&mid=210706335&idx=1&sn=2b1f6b328806291fbbd209547b79916f&scene=23&srcid=0915SVYpoLWr0D68hL44pmfo#rd">赢"免费"火山冻</a>
+					</div>
+					<a class="startpackl start" id="rankList">排行榜</a>
+					<a class="startpackr start" id="gameExp">游戏说明</a>
+				</div>
+			</section>
+			<!--游戏首页 end-->
+			<!--游戏说明弹出框start-->
+			<section id="gameExpPop" class="m-pop hide">
+				<div class="box box-v box-center wh-100" >
+					<div class="cont">
+						<img src="images/4-2p youxiguize.jpg" class="topimg">
+	        			<a id="closeExp" class="close"></a>
+						<div class="text">
+							<p class="tishi2">游戏玩法</p>
+							<p class="tindet">火山2分钟就要爆发啦，你从火山口（起点）出发，看你需要几步安全逃离火山，到达安全区。十字路口随机埋有火山炸弹，踩上炸弹则Game over，重新开始游戏！若2分钟内未逃离火山，则火山爆发。最后根据每天安全逃离的最低步数或耗时进行成绩排行哦。</p>
+							<p class="tishi2">游戏奖励</p>
+							<p class="tindet">每人每天有三次玩游戏的机会，分享一次则增加一次玩的机会，每日24：00刷新成绩进行游戏排行，参与游戏即可获得乐动火山冻红包，最高可获得39元的金额免单哦！
+							</p>
+						</div>
+	        		</div>
+				</div>
+	        </section>
+			<!--游戏说明弹出框end-->
+			<!--正在游戏start-->
+			<section id="playing" class="wh100 box box-v box-center hide">
+				<div class="clearfix">
+					<div class="userpack">
+						<img src="images/pic.jpg" class="userimg">
+						<img src="images/shan.png" class="shan">
+					</div>
+					<div class="fenshupack">
+						<img src="images/time.png" class="clock_hlp">
+						<div class="time">
+							<span id="min">02</span>:
+							<span id="sec">00</span>
+						</div>
+						<div class="barpack">
+							<div class="bar"></div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="bushupack">步数<span class="count">0</span></div>
+				<div id="gameBox" class="rel">
+					
+				</div>
+				<textarea id="ulTMP" class="hide">
+					<ul class="gamelist clearfix">
+						<!--第一行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li class="chukou">
+							<div class="zhe hide"></div>
+						</li>
+						<!--第二行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第三行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第四行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第五行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第六行-->
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第七行-->
+						<li id="sz">
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<!--第八行-->
+						<li class="huoshan">
+							<div class="zhe hide"></div>
+						</li>
+						<li id="so">
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+						<li>
+							<div class="zhe"></div>
+						</li>
+					</ul>
+					<div id="here" class="upDown"></div>
+					<div class="pa hide"><img src="images/zhasile.png"></div>	
+				</textarea>
+				<div class="hstishi"><img src="images/zhiyin.png" ><span id="tip">从左下角开始，逃离火山口，注意地雷哟</span></div>
+			</section>
+			<!--正在游戏end-->
+			<!--失败弹出框start-->
+	   		<section id="popshibai" class="m-pop hide" style="z-index: 8888;">
+	   			<img src="images/shibai.png" class="popimg">
+				<div class="btnpack">
+					<a class="startpack"><div class="another" id="playAgain1">再来一次</div></a>
+					<a class="startpack"><div class="another" id="share1">扩散抢红包</div></a>
+					<a class="startpack"><div class="back" id="back">返回摇歌</div></a>
+				</div>
+	        </section>
+	   		<!--失败弹出框end-->
+	   		<!--胜利弹出框start-->
+	   		<section id="popshengli" class="m-pop hide" style="z-index: 8888;">
+	   			<img src="images/shengli.png" class="popimg">
+				<div class="congra">
+					<p>您用<span class="congra2" id="sp">7</span>步成功逃离火山</p>
+					<p class="congra2">逃跑大师非你莫属</p>
+					
+				</div>
+				<div class="btnpack">
+					<a class="startpack"><div class="another" id="playAgain2">再来一次</div></a>
+					<a class="startpack"><div class="another" id="share2">炫耀抢红包</div></a>
+					<a class="startpack"><div class="back" id="checkRank">查看排行</div></a>
+				</div>
+	        </section>
+	   		<!--胜利弹出框end-->
+	   		<!--分享弹出框start-->
+	   		<section id="popshare" class="m-pop hide" style="z-index: 8888;">
+	   			<img src="images/fenxiang2.png" class="sharepic">
+	   		</section>
+	   		<!--分享弹出框end-->
+			
+		</article>
+		<script data-main="js/index-audio.js?v=201509151438" src="http://lppzcdn.letwx.com/app/libs/require.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

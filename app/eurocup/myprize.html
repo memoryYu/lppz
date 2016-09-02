@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>良品铺子 | 欧洲杯火热大竞猜</title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" type="text/css" href="css/base2.css" />
+		<link rel="stylesheet" type="text/css" href="css/myprize.css" />
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "//hm.baidu.com/hm.js?50247273a35616f65e201c60e46344aa";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+		
+	</head>
+	<body class="h-100">
+		<article id="main" class="wh-100 hide">
+			<!--prizePage start-->
+			<section id="prizePage" class="wh-100 hide"></section>
+			<textarea id="prizeTMP" class="hide">
+				<img src="images/jiangpin.png" class="wdjp"/>
+				<ul class="prizeList">
+				<%
+					for(var i=0;i<data.length;i++){
+						if(data[i].iscoupon == 0){
+				%>	
+					<!--实物奖-->
+					<li class="sw">
+						<div class="swj box box-v-c box-h-l"><span class="orange"><%=data[i].money%></span> <%=data[i].qname%></div>
+						<div data-qname="<%=data[i].qname%>" data-money="<%=data[i].money%>" data-id="<%=data[i].id%>" class="<%=(data[i].isget == 0)?'get':'got'%>"><%=(data[i].isget == 0)?'':'已'%>领取</div>
+					</li>
+					<!--<li class="sw">
+						<div class="swj box box-v-c box-h-l"><span class="orange">三等奖</span> U盘</div>
+						<div class="get">领取</div>
+					</li>-->
+				<%
+						}else{
+				%>	
+					<!--优惠券-->
+					<li>
+						<div class="yhq box box-v-c box-h-l">
+							<span class="orange"><%=data[i].money%></span><%=data[i].qname%><br />
+							<span class="small"><%=data[i].desc%></span>
+						</div>
+						<div data-isyouzan="<%=data[i].isyouzan%>" data-geturl="<%=data[i].geturl%>" data-id="<%=data[i].id%>" class="<%=(data[i].isget == 0)?'use':'used'%>"><%=(data[i].isget == 0)?'':'已'%>领取</div>
+					</li>
+					<!--<li>
+						<div class="yhq box box-v-c box-h-l">
+							<span class="orange">8元</span>零食优惠券一张<br />
+							<span class="small">满58元可用</span>
+						</div>
+						<div class="use">使用</div>
+					</li>-->
+				<%
+						}
+					}
+				%>	
+				</ul>
+				<div class="bottom">
+					<img src="images/btn_15.png" class="gshy" id="gshy"/>
+					<a href="#" id="fhsy">返回首页</a>
+				</div>
+			</textarea>	
+			<!--prizePage end-->
+			<!--sharePage start-->
+			<section id="sharePage" class="wh-100 m-pop hide">
+				<img src="images/fenxiang_1.png" class="fx1"/>
+			</section>	
+			<!--sharePage end-->
+			<!--infoPage start-->
+			<section id="infoPage" class="wh-100 m-pop hide">
+				<div class="wh-100 box box-center">
+					<div class="contain">
+						<img src="images/qiu.png" class="qiu"/>
+						<p class="hj">恭喜你获得<span id="degree">二等奖</span> <span id="qname">电子秤</span></p>
+						<p class="ins">请完善您的联系方式<br />奖品将在活动结束后的十五个工作日内发放</p>
+						<input type="text" id="name" placeholder="姓名"/>
+						<input type="tel" id="tel" placeholder="联系电话"/>
+						<input type="text" id="idcard" placeholder="身份证号"/>
+						<input type="text" id="address" placeholder="地址"/>
+						<div class="btns clearfix">
+							<img src="images/btn_17.png" class="qx" id="qx"/>
+							<img src="images/btn_16.png" class="qrtj" id="qrtj"/>
+						</div>
+					</div>
+				</div>
+			</section>	
+			<!--infoPage end-->
+			<!--errorPage start-->
+			<section id="errorPage" class="wh-100 hide">
+				<img src="images/error.jpg" class="w-100"/>
+				<p>活动太火爆，请您稍后再试~</p>
+			</section>
+			<!--errorPage end-->
+		</article>
+		<script src="js/config.js?v=201606181820" type="text/javascript"></script>
+		<script type="text/javascript" src="http://lppzcdn.letwx.com/app/libs/require.min.js" charset="utf-8"></script>
+		<script src="js/myprize.js?v=201606181820"></script>
+	</body>
+</html>

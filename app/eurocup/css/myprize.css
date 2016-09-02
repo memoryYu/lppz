@@ -1,0 +1,195 @@
+/*prizePage start*/
+#prizePage{
+	min-height: 100%;
+	position: relative;
+	background: url(../images/bg.jpg) repeat-y;
+	background-size: 100% auto;
+	background-position: center;
+	padding: 20px 24px;
+}
+#prizePage .wdjp{
+	width: 100%;
+}
+.prizeList{
+	width: 100%;
+	margin: 10px 0;
+	display: block;
+    height: 71%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.prizeList li{
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	padding-bottom: 12px;
+	padding-left: 25.8%;
+	padding-right: 26.5%;
+	position: relative;
+	height:102px;
+	background: url(../images/quan_2.png) no-repeat;
+	background-size: 100% auto;
+	background-position:center ;
+}
+.prizeList li .swj{
+	width: 100%;
+	height: 100%;
+	font-size: 1.1rem;
+	color: #184509;
+	font-weight: bold;
+}
+.prizeList li .yhq{
+	width: 100%;
+	height: 100%;
+	font-size: 1rem;
+	color: #184509;
+	font-weight: bold;
+}
+.prizeList li .yhq .small{
+	font-size: 0.8rem;
+	color: #184509;
+	font-weight: normal;
+}
+.prizeList li .get,.prizeList li .use,.prizeList li .got,.prizeList li .used{
+    position: absolute;
+    width: 17.7%;
+    right: 5.3%;
+    top: 50%;
+    margin-top: -20px;
+    border: 2px solid #fe6900;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fe6900;
+    padding: 2px 0;
+    display: block;
+}
+.prizeList li .got,.prizeList li .used{
+	color: #999;
+	border-color: #999;
+}
+.prizeList li.sw{
+	background: url(../images/quan_1.png) no-repeat;
+	background-size: 100% auto;
+	background-position:center ;
+}
+.orange{
+	color: #fe6900;
+}
+#prizePage .bottom{
+	position: fixed;
+	left: 0;
+	bottom:0 ;
+	width: 100%;
+	padding-bottom: 5%;
+	text-align: center;
+}
+#prizePage .bottom .gshy{
+	display: block;
+	width: 41.3%;
+	margin: auto;
+	margin-bottom: 3.5%;
+}
+#prizePage .bottom a{
+	font-size: 1rem;
+	color: #184509;
+	margin: auto;
+	text-decoration: underline;
+	text-align: center;
+	display: inline-block;
+}
+/*prizePage end*/
+/*sharePage start*/
+#sharePage .fx1{
+	width: 81%;
+	position: absolute;
+	top: 3%;
+	right: 8%;
+}
+/*sharePage end*/
+/*infoPage start*/
+.qiu{
+	position: absolute;
+	width: 28.5%;
+	top: 0;
+	right: 0;
+}
+#infoPage .contain{
+	width: 88%;
+	background: #5db32f;
+	border: 3px solid #fff;
+	border-radius: 10px;
+	padding: 22px 27px;
+	position: relative;
+}
+#infoPage .hj{
+	font-size: 1.4rem;
+	color: #f9f054;
+	text-align: center;
+    margin-bottom: 5px;	
+    position: relative;
+}
+#infoPage .ins{
+	font-size: 0.88rem;
+	text-align: center;
+	color: #fff;
+	position: relative;
+}
+#infoPage input{
+	width: 100%;
+	border-radius: 30px;
+	background: #fff;
+	padding: 10px;
+	font-size: 0.9rem;
+	color: #333;
+    font-family: "microsoft yahei", arial, 'Lato', Calibri, Arial, sans-serif;
+    margin: 30px 0;
+    display: block;
+}
+#infoPage .btns{
+	width: 100%;
+}
+.btns .qx{
+	float: left;
+	/*height: 40px;*/
+	width: 40.6%;
+	display: block;
+}
+.btns .qrtj{
+	float: right;
+	/*height: 40px;*/
+	width: 48.4%;
+	display: block;
+}
+/*infoPage end*/
+/*errorPage start*/
+#errorPage{
+	font-size: 0.9rem;
+	color: #999;
+	text-align: center;
+	background-color: #f5f5f5;
+}
+/*errorPage end*/
+@media only screen and (max-height: 480px) {
+	.prizeList{
+		height: 62%;
+	}
+}
+@media only screen and (max-width: 359px) {
+	.prizeList li{
+		margin-bottom: 0;
+	}
+	.prizeList li .yhq{
+		font-size: 0.9rem;
+	}
+	.prizeList li{
+	    padding-right: 24.5%;
+	}
+	#infoPage .hj{
+		font-size: 1.22rem;
+	}
+	#infoPage .ins{
+		font-size: 0.8rem;
+	    margin-bottom: -10px;
+	}
+}

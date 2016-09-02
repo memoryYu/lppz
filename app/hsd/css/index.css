@@ -1,0 +1,816 @@
+body {
+	width: 100%;
+	height: 100%;
+}
+#indexPage {
+	background-color: #fed401;
+	background-image: url(../images/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding-top: 20%;
+}
+.logo {
+	position: absolute;
+	top: 35px;
+	left: 35px;
+	width: 200px;
+}
+.zhuti {
+	height: 66%;
+	display: block;
+	margin: auto;
+}
+.txtbg {
+	background: url(../images/txtbg.png) no-repeat;
+	background-size: 120%;
+	background-position: top;
+	margin-top: -16%;
+	position: relative;
+}
+.txtbg .btn_red {
+	margin-top: 10%;
+}
+.btn_red {
+	width: 341px;
+	height: 102px;
+	line-height: 95px;
+	text-align: center;
+	font-weight: 700;
+	background: url(../images/anniu1.png) no-repeat center;
+	background-size: cover;
+	font-size: 2.5rem;
+	color: #fff;
+	margin: 15px auto;
+}
+.index_p {
+	color: #333;
+	font-size: 1.8rem;
+	font-weight: bolder;
+}
+#szPage {
+	background: url(../images/bg.jpg) no-repeat center;
+	background-size: cover;
+}
+#szPage .none {
+	width: 100%;
+	height: 5%;
+}
+#szPage .wz {
+	color: #f32d51;
+	font-weight: 700;
+	font-size: 2.0rem;
+	letter-spacing: 3px;
+}
+.device{
+	width: 100%;
+	position: relative;
+	height: 150px;
+	margin-top: 5%;
+	z-index: 500;
+}
+.swiper-country{
+  width: 480px;
+  height: 150px;
+  text-align: center;
+}
+.contryList {
+	/*padding-left:0 !important;
+	padding-right: 0 !important;*/
+	position: relative;
+}
+.contryList .swiper-slide {
+	padding: 6px;
+	width: 160px !important;
+	background-color: transparent;
+}
+.contryList .swiper-slide .countryitem {
+	width: 100%;
+	height: 100%;
+	background: url(../images/2p-guodong-huang.png) no-repeat;
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+	color: #fff;
+	font-size: 1.5rem;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	color: #d58a20;
+	font-weight: bold;
+	padding-top: 30px;
+}
+.swiper-slide.swiper-slide-active .countryitem {
+	background: url(../images/2p-guodong-hong.png) no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: #f54b68;
+}
+.arrow-left{
+  background: url(../images/2p-jiantou-zuo.png) no-repeat left top;
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 40px;
+  height: 150px;
+  background-size: 20px 40px;
+  background-position: center center;
+}
+.arrow-right {
+  background: url(../images/2p-jiantou-you.png) no-repeat left bottom;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 40px;
+  height: 150px;
+  background-size: 20px 40px;
+  background-position: center center;
+}
+.agt {
+	font-size: 1rem;
+}
+.triangle {
+	width: 47px;
+	height: 43px;
+	margin: auto;
+	margin-top: 10px;
+	position: relative;
+	z-index: 500;
+	background: url(../images/to.png) no-repeat;
+	background-size: cover;
+}
+.guang {
+	width: 100%;
+	height: 50%;
+}
+.guang .guang_img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -25%;
+}
+.shaizi {
+	width: 227px;
+	height: 227px;
+	position: absolute;
+	top: 8%;
+	left: 50%;
+	margin-left: -114px;
+	/*background: url(../images/shaizi.png) no-repeat center;*/
+	
+	background-size: cover;
+}
+.cg {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -170px;
+	z-index: 400;
+	top: 60%;
+}
+.tw {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -170px;
+	z-index: 400;
+	top: 84%;
+}
+#musicPage .fx {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	height: 8%;
+	z-index: 99;
+}
+#musicPage .info {
+	color: #000000;
+	line-height: 42px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 1.2rem;
+}
+#musicPage .pan {
+	width: 434px;
+	height: 434px;
+	position: relative;
+	margin-bottom: 30px;
+	margin: 0 auto;
+}
+#musicPage .diwen {
+	width: 434px;
+	height: 434px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+#musicPage .on {
+	width: 98px;
+	height: 98px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -49px;
+	margin-top: -49px;
+}
+#musicPage .backimg {
+	width: 228px;
+	height: 228px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -114px;
+	margin-top: -114px;
+	z-index: 99;
+	border-radius: 50%;
+}
+#musicPage .huatong {
+	height: 392px;
+	position: absolute;
+	right: -100px;
+	top: -50px;
+	-webkit-transform-origin: 65% 20%;
+	transform-origin: 65% 20%;
+	-webkit-transform: rotate(-18deg);
+	transform: rotate(-18deg);
+}
+#musicPage .intro {
+  text-align: center;
+  color: #333;
+  margin: 16px auto;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+#percent{
+	color: #f3315e;
+}
+#musicPage .startpack {
+	display: block;
+}
+#musicPage .another {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu-2.png);
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#musicPage .taowang {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+}
+#musicPage .font-w {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	100% {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+#musicPage .pulse {
+	-webkit-animation: pulse 1.5s linear;
+	animation: pulse 1.5s linear;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.pulse {
+	-webkit-animation: pulse 1.5s linear;
+	animation: pulse 1.5s linear;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.shaizi .wrap {
+	width: 227px;
+	height: 227px;
+	margin: 120px auto 30px auto;
+	position: relative
+}
+.shaizi .dice {
+	width: 227px;
+	height: 227px;
+	background: url(../images/dice.png) no-repeat;
+	background-size: 100%;
+}
+.shaizi .dice_1 {
+	background-position: 0px 8px;
+}
+.shaizi .dice_2 {
+	background-position: 0px -232px;
+}
+.shaizi .dice_3 {
+	background-position: 0px -467px;
+}
+.shaizi .dice_4 {
+	background-position: 0px -707px;
+}
+.shaizi .dice_5 {
+	background-position: 0px -958px;
+}
+.shaizi .dice_6 {
+	background-position: 0px -1204px;
+}
+.shaizi .dice_t {
+	background-position: 6px -1460px;
+}
+.shaizi .dice_s {
+	background-position: 10px -1717px;
+}
+.shaizi .dice_e {
+	background-position: 7px -1972px;
+}
+.shaizi p#result {
+	text-align: center;
+	font-size: 16px
+}
+.shaizi p#result span {
+	font-weight: bold;
+	color: #f30;
+	margin: 6px
+}
+.shaizi #dice_mask {
+	width: 90px;
+	height: 90px;
+	background: #fff;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999
+}
+#musicPage {
+	background: url(../images/bg.jpg) no-repeat;
+	background-size: cover;
+	overflow: hidden;
+}
+#musicPage .bfbtn.active {
+	background: url(../images/bofanganniu.png) no-repeat center;
+}
+#musicPage .bfbtn {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -60px;
+	margin-top: -60px;
+	background: url(../images/zantinganniu.png) no-repeat center;
+	background-size: cover;
+	z-index: 100;
+}
+#musicPage .music_load {
+	width: 300px;
+	height: 300px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -150px;
+	z-index: 500;
+	color: #fff;
+	font-size: 1.8rem;
+}
+.load_gif {
+	display: block;
+	width: 40%;
+	margin-bottom: 15px;
+}
+#rankPage {
+	background: url(../images/8p-beijing.jpg) no-repeat;
+	background-size: cover;
+}
+#rankPage .toppack {
+	width: 100%;
+	color: #333;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 40px;
+}
+#rankPage .p_info {
+	font-size: 1.8rem;
+}
+#rankPage .toppack span {
+	color: #F02E4C;
+	font-size: 1.6rem;
+}
+#rankPage .topg1 {
+	height: 63px;
+	margin: 7px auto;
+	display: block;
+}
+#rankPage .topg2 {
+	height: 50px;
+	margin: 0px auto 7px;
+	display: block;
+}
+#rankPage .startpack {
+	display: block;
+}
+#rankPage .start {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+	margin: auto;
+	line-height: 100px;
+	color: #fff;
+	font-size: 1.6rem;
+	text-align: center;
+}
+#rankPage .rankpack {
+	padding: 19px 0;
+	position: relative;
+	width: 100%;
+}
+#rankPage .rankpack {
+	overflow: hidden;
+	padding: 30px 0;
+}
+#rankPage .rankList {
+	position: relative;
+	overflow-y: scroll;
+	width: 90%;
+	margin: 10px auto;
+	padding-top: 29px;
+	top: -18px;
+}
+#rankPage .up,
+#rankPage .down {
+	position: absolute;
+	left: 50%;
+	width: 54px;
+	margin-left: -27px;
+}
+#rankPage .guan {
+	position: absolute;
+	left: 34px;
+	top: -24px;
+	width: 44px;
+	overflow: visible;
+}
+#rankPage .up {
+	top: 1px;
+}
+#rankPage .down {
+	bottom: -2px;
+}
+#rankPage .rankList li {
+	width: 100%;
+	height: 116px;
+	padding-top: 8px;
+	margin-bottom: 8px;
+	position: relative;
+	padding-left: 100px;
+}
+#rankPage .rankList .num {
+	color: #f02e4c;
+	font-size: 2.5rem;
+	font-weight: bold;
+	position: absolute;
+	left: -10px;
+	top: 30px;
+	display: inline-block;
+	width: 40px;
+}
+#rankPage .userimg {
+	position: absolute;
+	left: 45px;
+	top: 0px;
+	border: none !important;
+	background: transparent !important;
+}
+#rankPage .border {
+	width: 117px;
+	height: 117px;
+	border: 14px solid #fff;
+	border-radius: 50%;
+	background-color: #fff;
+}
+#rankPage .rankList .userimg .border>img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+#rankPage .rankList .info {
+	background-color: #F27520;
+	color: #fff;
+	font-size: 1.6rem;
+	padding: 5px 10px 5px 70px;
+	width: 100%;
+	height: 100px;
+	border-radius: 20px;
+	text-align: left;
+}
+#rankPage .username {
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+#rankPage .fontlarge {
+	font-size: 2.0rem;
+}
+#rankPage .rankList .time {
+	margin-left: 20px;
+	display: inline;
+}
+#rankPage .bot {
+	width: 100%;
+	padding: 10px 5%;
+}
+#rankPage .startpack {
+	display: block;
+}
+#rankPage .bot .another {
+	width: 200px;
+	height: 62px;
+	line-height: 62px;
+	font-size: 1.6rem;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+}
+#rankPage .swiper-slide {
+	background: none;
+}
+.another {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	margin-bottom: 10px;
+	margin: 0 auto;
+	font-weight: bold;
+}
+.swiper-container {
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+	/* Fix of Webkit flickering */
+	
+	z-index: 1;
+}
+.swiper-wrapper {
+	position: relative;
+	width: 100%;
+	-webkit-transition-property: -webkit-transform, left, top;
+	-webkit-transition-duration: 0s;
+	-webkit-transform: translate3d(0px, 0, 0);
+	-webkit-transition-timing-function: ease;
+	-moz-transition-property: -moz-transform, left, top;
+	-moz-transition-duration: 0s;
+	-moz-transform: translate3d(0px, 0, 0);
+	-moz-transition-timing-function: ease;
+	-o-transition-property: -o-transform, left, top;
+	-o-transition-duration: 0s;
+	-o-transform: translate3d(0px, 0, 0);
+	-o-transition-timing-function: ease;
+	-o-transform: translate(0px, 0px);
+	-ms-transition-property: -ms-transform, left, top;
+	-ms-transition-duration: 0s;
+	-ms-transform: translate3d(0px, 0, 0);
+	-ms-transition-timing-function: ease;
+	transition-property: transform, left, top;
+	transition-duration: 0s;
+	transform: translate3d(0px, 0, 0);
+	transition-timing-function: ease;
+}
+.swiper-free-mode > .swiper-wrapper {
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-timing-function: ease-out;
+	-ms-transition-timing-function: ease-out;
+	-o-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+	margin: 0 auto;
+}
+.swiper-slide {
+	float: left;
+}
+#myprizePage {
+	background: url(../images/8p-beijing.jpg) no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+}
+#myprizePage .close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 99;
+	width: 82px;
+}
+#myprizePage .cont {
+	width: 80%;
+	border-radius: 30px;
+	position: relative;
+	padding: 222px 50px 40px;
+	line-height: 38px;
+	background-color: #fff;
+	font-size: 1.2rem;
+}
+#myprizePage .close {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 80px;
+    height: 80px;
+	z-index: 888;
+}
+#myprizePage .conttishi {
+	position: absolute;
+	left: 185px;
+	top: 115px;
+	z-index: 1;
+	color: #89da54;
+	font-size: 1.8rem;
+}
+#myprizePage .contimg {
+	position: absolute;
+	left: 30px;
+    top: 70px;
+	z-index: 1;
+	width: 162px;
+}
+#myprizePage .input {
+	width: 100%;
+	margin-bottom: 30px;
+	border: 2px solid #89da54;
+	border-radius: 60px;
+	height: 88px;
+	line-height: 88px;
+	padding: 0 20px;
+	color: #333;
+	font-size: 1.6em;
+}
+#myprizePage .cont .another {
+	width: 335px;
+	height: 97px;
+	line-height: 97px;
+	font-size: 2.0rem;
+}
+#myprizeGoIndex{
+	background: url(../images/btn.png) no-repeat;
+	background-size: 100% 100%;
+}
+#myprizePage .startpack {
+	margin: 0 auto;
+}
+#myprizePage .myaward {
+	width: 90%;
+	border-radius: 30px;
+	position: relative;
+	padding: 70px 15px 40px;
+	line-height: 38px;
+	background-color: #e5e5c6;
+	font-size: 1.6rem;
+	color: #666;
+	margin: auto;
+}
+#myprizePage .myawardtit {
+	width: 486px;
+	position: absolute;
+	left: 50%;
+	top: -88px;
+	margin-left: -243px;
+	z-index: 1;
+}
+#myprizePage .quanlist li {
+	padding: 20px 103px 20px 117px;
+	color: #666;
+	border-top: 2px solid #999;
+	position: relative;
+	margin-bottom: 20px;
+}
+#myprizePage .quanlist li:first-child {
+	border-top: none;
+}
+#myprizePage .border {
+	width: 100px;
+	height: 100px;
+	border: 10px solid #ff6701;
+	border-radius: 50%;
+	position: absolute;
+	left: 0%;
+	top: 11px;
+}
+#myprizePage .quanimgl {
+	width: 100%;
+	border-radius: 50%;
+}
+#myprizePage .quanr {
+	position: absolute;
+	right: 0%;
+	top: 22px;
+	width: 103px;
+	height: 64px;
+}
+#myprizePage .ylq .quanr {
+	background: url("../images/9p-gou.png") no-repeat;
+	background-position: 20px 12px;
+	color: transparent;
+}
+#myprizePage .quanr.lq {
+	width: 103px;
+	height: 64px;
+	border-radius: 10px;
+	line-height: 64px;
+	text-align: center;
+	color: #fff;
+	font-size: 1.6rem;
+	font-weight: bold;
+	box-shadow: 2px 2px 2px #569130;
+	background: #8BD94D;
+}
+#myprizePage .fontb {
+	font-size: 1.6rem;
+	font-weight: bold;
+}
+#myprizePage .m-t {
+	margin-top: 50px;
+}
+.rotate360 {
+	-webkit-animation: rotate360 20s linear infinite;
+	animation: rotate360 20s linear infinite;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.rotate15 {
+	-webkit-animation: rotate15 1s ease-in-out;
+	animation: rotate15 1s ease-in-out;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-transform-origin: 65% 20%;
+	transform-origin: 65% 20%;
+}
+@-webkit-keyframes rotate15 {
+	0% {
+		-webkit-transform: rotate(-18deg);
+		transform: rotate(-18deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+@keyframes rotate15 {
+	0% {
+		-webkit-transform: rotate(-18deg);
+		transform: rotate(-18deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+#anz1 {
+	position: absolute;
+	display: block;
+	left: 20px;
+	top: 20px;
+	height: 8%;
+	z-index: 99;
+}

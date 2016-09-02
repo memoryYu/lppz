@@ -1,0 +1,348 @@
+@font-face{
+	font-family: myFirstFont;
+	src: url('../css/华康少女字.TTF');
+}
+.getFont{
+	color: #f4f554;
+	position: absolute;
+	z-index: -2;
+	font-family: myFirstFont;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body,#postPage{
+	background: #f4f554;
+}
+#postPage{
+	overflow: hidden;
+}
+section{
+	position: relative;
+}
+#yellow{
+	width: 100%;
+	height: 100%;
+	background: #f4f554;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+}
+/*indexPage start*/
+.p1{
+	width: 67.2%;
+	display: block;
+}
+.logo{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 25%;
+}
+.bt{
+	display: block;
+	margin: auto;
+	width: 98%;
+    margin-top: -10px;
+}
+.p3{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+}
+.p2{
+	width: 100%;
+	margin-top: -20px;
+}
+.form{
+	width: 80%;
+	display: block;
+	margin: auto;
+	margin-left: 3%;
+}
+.form li{
+	width: 100%;
+	height: 40px;
+	margin-top: 15px;
+	font-size: 1.1rem;
+	line-height: 40px;
+}
+.form li label{
+	display: block;
+	float: left;
+	width: 36%;
+	text-align: right;
+	height: 100%;
+	color: #333;
+	padding-right: 10px;
+}
+.form li input{
+	display: block;
+	float: left;
+	width: 64%;
+	background: #fff;
+	border: 2px solid #f7cf69;
+	border-radius: 5px;
+	padding: 0 8px;
+	color: #666;
+	height: 100%;
+    font-family: "microsoft yahei", arial, 'Lato', Calibri, Arial, sans-serif;
+    font-size: 1.1rem;
+}
+.txt{
+	width: 54.6%;
+	display: block;
+	margin: 20px auto;
+}
+.btn{
+	width: 39%;
+	margin: auto;
+	position: relative;
+	z-index: 1;
+}
+/*indexPage end*/
+/*postPage start*/
+.ly{
+	width: 23%;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.num{
+	margin: auto;
+    margin-top: -30px;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.num span{
+    font-size: 2.2rem;
+    color: #0570b3;
+    margin: 0 5px;
+    font-weight: bold;
+}
+.icon{
+	width: 100px;
+	height: 100px;
+	margin-right: 0px;
+    background-color: #fff;	
+    display: inline-block;
+    overflow: hidden;
+}
+.face{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.who,.like,.where{
+	font-size: 2.2rem;
+	color: #333;
+	padding-left: 10px;
+	margin-top: 0px;
+}
+.who{
+	margin-left: 20%;
+}
+.who span{
+	color: #e64e1f;
+}
+.like{
+	margin-left: 30%;
+}
+.like span{
+	color: #19a4da;
+}
+.where{
+	margin-left: 12%;
+}
+.where span{
+	color: #7fb742;
+}
+.line{
+	font-weight: bold;
+	margin-right: 6px;
+}
+.font{
+	font-family: myFirstFont;
+	font-size: 3.4rem;
+	padding: 0 6px;
+}
+.jy{
+	width: 67.6%;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	display: block;
+}
+.tip{
+	width: 74%;
+	margin-left: 10px;
+	position: relative;
+	z-index: 1;
+}
+.tip img{
+	width: 100%;
+}
+.zt{
+	position: absolute;
+	width: 76%;
+	height: 56.8%;
+	left: 20%;
+	top: 17%;
+	transform: rotate(-2.5deg);
+	font-family: myFirstFont;
+	font-size: 1.6rem;
+	color: #333;
+	padding: 18px 10px;
+    line-height: 2.2rem;
+    /*overflow: hidden;*/
+}
+.qrcode{
+    position: absolute;
+    right: -25%;
+    top: 18%;
+    text-align: right;
+    width: 100%;
+    height: 100%;
+}
+.qrcodeImg{
+    width: 30% !important;
+    display: block;
+    /*display: none;*/
+    position: absolute;
+    right: -29%;
+    top: 16%;
+}
+.qrcodeP{
+    font-size: 1.4rem;
+    color: #333;
+    width: 140%;
+    position: absolute;
+    right: -102%;
+    top: 78%;
+    display: block;
+    /*display: none;*/
+}
+/*postPage end*/
+/*tipPage start*/
+#tipPage{
+	background: #fff;
+	position: relative;
+	padding: 15px;
+}
+.imgBox{
+	width: 100%;
+	position: relative;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+.l-t{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	left: 0;
+	top: 0;
+	border-left: 1px solid #C5C5C5;
+	border-top: 1px solid #C5C5C5;
+}
+.r-t{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	right: 0;
+	top: 0;
+	border-right: 1px solid #C5C5C5;
+	border-top: 1px solid #C5C5C5;
+}
+.l-b{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	left: 0;
+	bottom: 0;
+	border-left: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5;
+}
+.r-b{
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	right: 0;
+	bottom: 0;
+	border-right: 1px solid #C5C5C5;
+	border-bottom: 1px solid #C5C5C5;
+}
+.saveTip{
+	color: #333;
+	font-size: 0.95rem;
+	text-align: center;
+	line-height: 1.6rem;
+}
+.back{
+	color: #18a4d8;
+	text-decoration: underline;
+	font-size: 0.95rem;
+	text-align: center;
+	line-height: 1.6rem;
+	width: 28%;
+	margin: auto;
+}
+/*tipPage end*/
+@media only screen and (max-width: 320px) {
+	.who,.like,.where{
+		font-size: 1rem;
+	}
+	.who{
+		margin-left: 16%;
+	}
+	.like{
+		margin-left: 32%;
+	}
+	.where{
+		margin-left: 8%;
+	}
+	.zt{
+		font-size: 1.6rem;
+		line-height: 2.0rem;
+	}
+	.tip{
+		margin-left: 5px;
+	}
+	.bt{
+		width: 95%;
+	}
+	.form li{
+		font-size: 1rem;
+		height: 35px;
+		line-height: 35px;
+	}
+	.form li input{
+		font-size: 1rem;
+	}
+	.txt{
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-height: 503px) {
+	.bt{
+		width: 88%;
+		margin-bottom: -10px;
+	}
+	.txt{
+		position: relative;
+		z-index: 1;
+	}
+}
+@media only screen and (min-width: 414px) {
+	.txt{
+		margin: 30px auto;
+	}
+}

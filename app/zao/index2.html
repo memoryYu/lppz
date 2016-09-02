@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>“枣”就应该脑洞大开</title>
+    <!--<base href="./" />-->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <script>
+        // 检查更新离线缓存清单
+        if(window.applicationCache){
+            window.applicationCache.addEventListener('updateready', function(e) {
+                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                    applicationCache.swapCache();
+                    window.location.reload();
+                } else {
+                    // Manifest没有改动，nothing to do
+                }
+            }, false);
+
+            // 错误处理
+            window.applicationCache.addEventListener('error', function(e) {
+                // nothing to do
+                console.log(1);
+                return false;
+            }, false);
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/base2.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/config.js" type="text/javascript"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?50247273a35616f65e201c60e46344aa";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body style="width:100%;">
+    <article id="main" class="wh-100 rel" style="width:100%;">
+        <!--首页 start-->
+        <section id="indexPage" class="indexPage wh-100 rel hide" style="width:100%;">
+            <div class="logo bounceInRight"></div>
+            <div class="mainImg bounceIn delay-2"></div>
+            <div class="indexBottom">
+                <div id="indexStart" class="indexStart bounceIn delay-4"></div>
+                <div class="clearfix indexB w-100" style="overflow:hidden;">
+                    <div id="indexMyprize" class="myPrize f-l bounceInLeft delay-5"></div>
+                    <div id="indexRule" class="rules f-r bounceInRight delay-5"></div>
+                </div>
+            </div>
+            <div class="ques"></div>
+            <div class="resultIImg"></div>
+        </section>
+        <!--题目页面 start-->
+        <section id="questionPage" class="questionPage wh-100 rel hide">
+            <div class="logo"></div>
+            <div class="h50"></div>
+            <div id="quesDesc" class="quesW">这位观音娘娘为什么没有那么妩媚？</div>
+            <div id="question" class="ques_10 quesAll">
+                <div class="quesOut wh-100 box box-center">
+                    <div class="quesImg "></div>
+                </div>
+                <div class="arrow"></div>
+                <div id="resultActiveW" class="t-c quesWB">拖住下面的红枣到上面合适的位置吧！</div>
+                <div id="resultOut" class="resultOut">
+                    <div id="touchMove" class="resultMove box box-center">
+                        <div class="resultImg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="resultTop" style="width:0;height:0;margin:0;"></div>
+        </section>
+        <!--挑战失败 start-->
+        <section class="m-pop hide" id="failPop">
+            <div class="wh-100 box box-center">
+                <div class="failOut">
+                    <div class="failInner">
+                        <div class="failImg"></div>
+                        <div class="failZao"></div>
+                        <div class="failW">看你骨骼奇特，再给你一次机会</div>
+                        <div id="failAgain"  class="failAgain"></div>
+                    </div>
+                    <!--<div id="failClose" class="failClose"></div>-->
+                </div>
+            </div>
+        </section>
+        <!--游戏规则 start-->
+        <section class="m-pop hide" id="rulePop">
+            <div class="wh-100 box box-center">
+                <div class="failOut">
+                    <div class="failInner">
+                        <div class="ruleImg"></div>
+                        <div class="rulesW">
+                            <p>1、完成5题可获得红枣节脆冬枣8折优惠券一张。</p>
+                            <p>2、每人每天3次机会 </p>
+                            <p>3、分享1次可多得到1次机会（上限为1次）</p>
+                            <p>4、活动期间每人最多可领取10张券</p>
+                            <p>5、活动时间：11月19日-12月15日</p>
+                        </div>
+                    </div>
+                    <div class="failClose"></div>
+                </div>
+            </div>
+        </section>
+        <!--结果页面 start-->
+        <section id="resultPage" class="wh-100 resultPage hide">
+            <div class="h20"></div>
+            <div class="resultTop"></div>
+            <div id="resultImgI" class="resultImgI"></div>
+            <div class="t-c cheakPrizeOut">
+                <a href="myprize.html" class="checkPrizeA">
+                    <div class="checkPrize"></div>
+                </a>
+            </div>
+            <div id="resultPageAgain" class="resultBtn btnAgain"></div>
+            <div id="resultPageShare" class="resultBtn btnShare"></div>
+        </section>
+        <!--分享 start-->
+        <section id="sharePage" class="sharePage wh-100 m-pop hide">
+            <img src="images/fenxiang.png" class="sharePopImg" />
+        </section>
+    </article>
+    <script src="http://lppzcdn.letwx.com/app/libs/require.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

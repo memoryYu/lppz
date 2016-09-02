@@ -1,0 +1,540 @@
+/*gameIndex start*/
+
+body {
+	height: 100%;
+}
+#gameIndex{
+	position: relative;
+	background: url(../images/4-1p-beijing.jpg) no-repeat;
+	background-size:cover ;
+	background-position: center;
+}
+.wh100 {
+	width: 100%;
+	height: 100%;
+}
+.topimg {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 0;
+}
+.logo {
+	width: 180px;
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	z-index: 1;
+}
+.midimg {
+	height: 412px;
+	margin-bottom: 20px;
+}
+.tishi {
+	line-height: 36px;
+	color: #333;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.num {
+	  font-size: 1.6rem;
+  font-weight: bold;
+  color: #f3315e;
+}
+.start {
+	width: 336px;
+	height: 88px;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+	margin: auto;
+	line-height: 82px;
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	font-weight: bold;
+	letter-spacing: 8px;
+}
+.botimg {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 0;
+}
+.startpackl {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	z-index: 1;
+}
+.startpackl.start,
+.startpackr.start {
+	width: 210px !important;
+	background: url(../images/btn.png) !important;
+	background-size: 100% 100% !important;
+}
+.startpackr {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	z-index: 1;
+}
+.mid {
+	position: relative;
+	z-index: 1;
+	padding-bottom: 88px;
+}
+.cont {
+	width: 85%;
+	border-radius: 30px;
+	position: relative;
+	padding: 114px 50px 40px;
+	line-height: 38px;
+	background-color: #fff;
+	font-size: 1.2rem;
+	overflow: hidden;
+}
+.close {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 20px;
+	top: 20px;
+	z-index: 1;
+	background: url(../images/4-2p-chacha.png) no-repeat;
+	background-size: 25px 25px;
+	background-position: center center; 
+}
+.tishi2 {
+	font-size: 1.5rem;
+	color: #f97621;
+	margin-top: 20px;
+	font-weight: bold;
+}
+.text {
+	position: relative;
+	z-index: 1;
+	font-size: 1.5rem;
+	color: #666;
+}
+.tindet {
+	text-indent: 2em;
+}
+/*gameIndex end*/
+/*playing start*/
+
+#playing {
+	background: url(../images/bg6.jpg);
+	background-size: 100% 100%;
+	height: 100%;
+}
+#playing .userpack {
+	position: relative;
+	width: 168px;
+	height: 166px;
+	float: left;
+	top: -25px;
+}
+#playing .fenshupack {
+  width: 376px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 10px;
+}
+#playing .clock_hlp {
+	width: 35px;
+	margin-right: 10px;
+	display: inline-block;
+	margin-top: -15px;
+}
+#playing .barpack {
+	width: 322px;
+	height: 24px;
+	background: url(../images/timett.png);
+	background-size: 100% 100%;
+	position: relative;
+	overflow: hidden;
+	border-radius: 30px;
+	margin-top: 10px;
+}
+#playing .time {
+	width: 83px;
+	height: 24px;
+	color: #f27520;
+	font-size: 1.6rem;
+	font-weight: bold;
+	display: inline-block;
+}
+#playing .bar {
+	border-radius: 30px;
+	width: 100%;
+	height: 100%;
+	background: -webkit-gradient(top, #f85823, #f7742c, #f85823);
+	background: -moz-linear-gradient(top, #f85823, #f7742c, #f85823);
+	background: -webkit-linear-gradient(top, #f85823, #f7742c, #f85823);
+	background: -o-linear-gradient(top, #f85823, #f7742c, #f85823);
+}
+#playing .widthChg {
+	animation: widthChg 160s;
+	-webkit-animation: widthChg 160s;
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode: both;
+}
+@keyframes widthChg {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+@-webkit-keyframes widthChg {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0;
+	}
+}
+@-webkit-keyframes bounceIn {
+	0%, 100%, 20%, 40%, 60%, 80% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3)
+	}
+	20% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1)
+	}
+	40% {
+		-webkit-transform: scale3d(.9, .9, .9);
+		transform: scale3d(.9, .9, .9)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03)
+	}
+	80% {
+		-webkit-transform: scale3d(.97, .97, .97);
+		transform: scale3d(.97, .97, .97)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1)
+	}
+}
+@keyframes bounceIn {
+	0%, 100%, 20%, 40%, 60%, 80% {
+		-webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+		transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		-ms-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3)
+	}
+	20% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1);
+		-ms-transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1)
+	}
+	40% {
+		-webkit-transform: scale3d(.9, .9, .9);
+		-ms-transform: scale3d(.9, .9, .9);
+		transform: scale3d(.9, .9, .9)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		-ms-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03)
+	}
+	80% {
+		-webkit-transform: scale3d(.97, .97, .97);
+		-ms-transform: scale3d(.97, .97, .97);
+		transform: scale3d(.97, .97, .97)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1);
+		-ms-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1)
+	}
+}
+.bounceIn {
+	display: block;
+	-webkit-animation-name: bounceIn;
+	animation-name: bounceIn;
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+#playing .userimg {
+	position: absolute;
+	left: 25px;
+	top: 0px;
+	width: 122px;
+	height: 122px;
+	z-index: 99;
+	border: 4px solid #f58836;
+	border-radius: 10px;
+	display: block;
+	background-color: #fff;
+}
+#playing .userpack .shan {
+	position: absolute;
+	left: 0px;
+	top: 102px;
+	width: 168px;
+	z-index: 1;
+}
+.wh100 {
+	width: 100%;
+	height: 100%;
+}
+.bushupack {
+	margin-top: -11%;
+	width: 34%;
+	height: 11%;
+	background: url(../images/shan.png) no-repeat;
+	background-position: 0 20px;
+	background-size: 100%;
+	color: #470f23;
+	font-size: 2.2rem;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 3px;
+}
+.count {
+	color: #e74a14;
+	text-shadow: 0 0 2px #fff;
+}
+.gamelist {
+	width: 515px;
+	padding-left: 14px;
+	position: relative;
+	z-index: 1;
+}
+.pa {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	z-index: 99;
+}
+.pa img{
+	width: 100%;
+}
+.gamelist li {
+	width: 72px;
+	height: 72px;
+	border: 4px solid #60a03b;
+	border-radius: 10px;
+	background-color: #fff;
+	position: relative;
+	float: left;
+	margin-left: -2px;
+	margin-bottom: -2px;
+	overflow: hidden;
+}
+.gamelist li .zhe {
+	width: 100%;
+	height: 100%;
+	background-color: #89da54;
+}
+.gamelist li.huoshan {
+	background: url(../images/huoshankou.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.gamelist li.zhujue {
+	background: url(../images/zhujue.png) no-repeat;
+	background-size: 100% 100%;
+}
+.gamelist li.chukou {
+	background: url(../images/chukou.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.hstishi {
+	color: #f1652b;
+	font-size: 1.5rem;
+	margin-top: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+.hstishi img {
+	height: 29px;
+	margin-right: 20px;
+}
+.gametop {
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 99;
+}
+.anniupack {
+	margin-top: -200px;
+}
+.popimg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.btnpack {
+	position: absolute;
+	top: 55%;
+	left: 0;
+	text-align: center;
+	width: 100%;
+}
+.startpack {
+	display: block !important;
+	margin-top: 10px !important;
+}
+.back {
+	width: 336px;
+	height: 100px;
+	background: url(../images/btn.png) no-repeat;
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	margin: 0 auto;
+	font-weight: bold;
+	letter-spacing: 6px;
+}
+.another {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu-2.png);
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	margin-bottom: 10px;
+	margin: 0 auto;
+	font-weight: bold;
+	letter-spacing: 6px;
+}
+.taowang {
+	width: 336px;
+	height: 100px;
+	background: url(../images/anniu1.png);
+	background-size: 100% 100%;
+	line-height: 100px;
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	margin: 0 auto;
+	font-weight: bold;
+}
+.congra {
+	width: 100%;
+	position: absolute;
+	top: 44%;
+	left: 0;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	font-size: 1.8rem;
+	font-weight: bold;
+}
+.congra2 {
+	line-height: 40px;
+	color: #fff017;
+	font-size: 2.1rem;
+	text-align: center;
+}
+@-webkit-keyframes upDown {
+	0% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	25% {
+		-webkit-transform: translate3d(0, -6px, 0);
+		transform: translate3d(0, -6px, 0);
+	}
+	50% {
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
+	75% {
+		-webkit-transform: translate3d(0, 6px, 0);
+		transform: translate3d(0, 6px, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes upDown {
+	0% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	25% {
+		-webkit-transform: translate3d(0, -6px, 0);
+		transform: translate3d(0, -6px, 0);
+	}
+	50% {
+		-webkit-transform: translate3d(0, 0px, 0);
+		transform: translate3d(0, 0px, 0);
+	}
+	75% {
+		-webkit-transform: translate3d(0, 6px, 0);
+		transform: translate3d(0, 6px, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+}
+.upDown {
+	-webkit-animation: upDown 2s linear infinite;
+	animation: upDown 2s linear infinite;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+#here {
+	width: 80px;
+	height: 60px;
+	position: absolute;
+	background: url(../images/zhujue.png) no-repeat;
+	background-position: center;
+	background-size: cover;
+	bottom: 0;
+	left: 18px;
+	z-index: 88;
+	transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	-o-transition: all .2s;
+}
+.sharepic{
+  width: 60%;
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+#anfh{
+	height: 6%;
+	display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+}
+/*playing end*/
